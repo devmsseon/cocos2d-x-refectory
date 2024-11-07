@@ -1124,6 +1124,11 @@
 		22EEABAD2CDCAB7000959E5E /* MenuItemImageExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */; };
 		22EEABAE2CDCAB7000959E5E /* MenuItemImageExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */; };
 		22EEABAF2CDCAB7000959E5E /* MenuItemImageExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */; };
+		22EEACD12CDCEA7500959E5E /* NodeUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEACD02CDCEA7500959E5E /* NodeUtils.cpp */; };
+		22EEACD32CDCEA7500959E5E /* NodeUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEACD02CDCEA7500959E5E /* NodeUtils.cpp */; };
+		22EEACD52CDCEA7500959E5E /* NodeUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEACD02CDCEA7500959E5E /* NodeUtils.cpp */; };
+		22EEACD82CDCEB0100959E5E /* NodeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EEACD72CDCEB0100959E5E /* NodeUtils.h */; };
+		22EEACD92CDCEB0100959E5E /* NodeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EEACD72CDCEB0100959E5E /* NodeUtils.h */; };
 		29031E0719BFE8D400EFA1DF /* libchipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29031E0619BFE8D400EFA1DF /* libchipmunk.a */; };
 		29031E0919BFE8DE00EFA1DF /* libchipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29031E0819BFE8DE00EFA1DF /* libchipmunk.a */; };
 		291901431B05895600F8B4BA /* CCNinePatchImageParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 291901411B05895600F8B4BA /* CCNinePatchImageParser.h */; };
@@ -4902,6 +4907,8 @@
 		222A3E2B2CDB925B0062E4D9 /* cocos2d-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cocos2d-prefix.pch"; sourceTree = "<group>"; };
 		22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MenuItemImageExtension.cpp; sourceTree = "<group>"; };
 		22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuItemImageExtension.h; sourceTree = "<group>"; };
+		22EEACD02CDCEA7500959E5E /* NodeUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeUtils.cpp; sourceTree = "<group>"; };
+		22EEACD72CDCEB0100959E5E /* NodeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeUtils.h; sourceTree = "<group>"; };
 		29031E0619BFE8D400EFA1DF /* libchipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libchipmunk.a; path = prebuilt/mac/libchipmunk.a; sourceTree = "<group>"; };
 		29031E0819BFE8DE00EFA1DF /* libchipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libchipmunk.a; path = prebuilt/ios/libchipmunk.a; sourceTree = "<group>"; };
 		2905E9CC1ACD3D8C00092DD2 /* libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libz.a; path = ../external/zlib/prebuilt/mac/libz.a; sourceTree = "<group>"; };
@@ -7450,8 +7457,10 @@
 		22EEABA52CDCAAD500959E5E /* c_extenstions */ = {
 			isa = PBXGroup;
 			children = (
+				22EEACD72CDCEB0100959E5E /* NodeUtils.h */,
 				22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */,
 				22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */,
+				22EEACD02CDCEA7500959E5E /* NodeUtils.cpp */,
 			);
 			name = c_extenstions;
 			path = ../c_extenstions;
@@ -9682,6 +9691,7 @@
 				15FB209D1AE7C57D00C31518 /* sweep_context.h in Headers */,
 				50CB247519D9C5A100687767 /* AudioCache.h in Headers */,
 				3823841C1A2590D2002C4610 /* ComAudioReader.h in Headers */,
+				22EEACD82CDCEB0100959E5E /* NodeUtils.h in Headers */,
 				1A40D1691E8E56C7002E363A /* schema.h in Headers */,
 				50ABC01F1926664800A911A9 /* CCThread.h in Headers */,
 				5053850E1B02819E00793096 /* CCVertexAttribBinding.h in Headers */,
@@ -10815,6 +10825,7 @@
 				15AE181319AAD2F700C27E9E /* CCAnimation3D.h in Headers */,
 				50ABBEC21925AB6F00A911A9 /* CCValue.h in Headers */,
 				2980F0241BA9A5550059E678 /* CCUIMultilineTextField.h in Headers */,
+				22EEACD92CDCEB0100959E5E /* NodeUtils.h in Headers */,
 				50ABBECA1925AB6F00A911A9 /* firePngData.h in Headers */,
 				B257B4511989D5E800D9A687 /* CCPrimitive.h in Headers */,
 				1A40D1311E8E56C7002E363A /* ieee754.h in Headers */,
@@ -11850,6 +11861,7 @@
 				1A5701B5180BCB590088DEC7 /* CCFontFreeType.cpp in Sources */,
 				1A5701B9180BCB5A0088DEC7 /* CCLabel.cpp in Sources */,
 				B665E2CA1AA80A6500DDB1C5 /* CCPUGravityAffectorTranslator.cpp in Sources */,
+				22EEACD52CDCEA7500959E5E /* NodeUtils.cpp in Sources */,
 				1A5701BD180BCB5A0088DEC7 /* CCLabelAtlas.cpp in Sources */,
 				15AE1B5319AADA9900C27E9E /* UIRichText.cpp in Sources */,
 				B665E3121AA80A6500DDB1C5 /* CCPUObserverManager.cpp in Sources */,
@@ -12717,6 +12729,7 @@
 				507B3BD91C31BDD30067B53E /* CCPUTextureAnimator.cpp in Sources */,
 				5020A1701D49912500E80C72 /* Attachment.c in Sources */,
 				507B3BDA1C31BDD30067B53E /* CCTMXLayer.cpp in Sources */,
+				22EEACD12CDCEA7500959E5E /* NodeUtils.cpp in Sources */,
 				507B3BDB1C31BDD30067B53E /* UIHBox.cpp in Sources */,
 				507B3BDD1C31BDD30067B53E /* CCPUScriptTranslator.cpp in Sources */,
 				507B3BDE1C31BDD30067B53E /* CCPUOnEventFlagObserver.cpp in Sources */,
@@ -13388,6 +13401,7 @@
 				B665E4131AA80A6600DDB1C5 /* CCPUTextureAnimator.cpp in Sources */,
 				1A5702EF180BCE750088DEC7 /* CCTMXLayer.cpp in Sources */,
 				15AE1BA519AADFDF00C27E9E /* UIHBox.cpp in Sources */,
+				22EEACD32CDCEA7500959E5E /* NodeUtils.cpp in Sources */,
 				B665E3DB1AA80A6600DDB1C5 /* CCPUScriptTranslator.cpp in Sources */,
 				B665E33B1AA80A6500DDB1C5 /* CCPUOnEventFlagObserver.cpp in Sources */,
 				3E2A09C31BAA91B70086B878 /* CCMotionStreak3D.cpp in Sources */,
