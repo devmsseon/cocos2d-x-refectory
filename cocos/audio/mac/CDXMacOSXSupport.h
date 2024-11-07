@@ -40,10 +40,12 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/NSSound.h>
 
+#ifdef CC_PLATFORM_IOS //선명수
 enum AudioSessionProperties {
-	kAudioSessionProperty_OtherAudioIsPlaying,
-	kAudioSessionProperty_AudioRoute	
+    kAudioSessionProperty_OtherAudioIsPlaying,
+    kAudioSessionProperty_AudioRoute
 };
+#endif
 #ifdef __cplusplus
 extern "C" {
 #endif	

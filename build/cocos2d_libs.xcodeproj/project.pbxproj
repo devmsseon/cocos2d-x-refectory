@@ -1117,6 +1117,13 @@
 		1ABA68B11888D700007D1BB4 /* CCFontCharMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ABA68AD1888D700007D1BB4 /* CCFontCharMap.h */; };
 		1AC0269C1914068200FA920D /* ConvertUTF.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AC026991914068200FA920D /* ConvertUTF.h */; };
 		1AC0269D1914068200FA920D /* ConvertUTF.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AC026991914068200FA920D /* ConvertUTF.h */; };
+		222A3E2C2CDB925B0062E4D9 /* cocos2d-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 222A3E2B2CDB925B0062E4D9 /* cocos2d-prefix.pch */; };
+		22EEABA72CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
+		22EEABA92CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
+		22EEABAA2CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
+		22EEABAD2CDCAB7000959E5E /* MenuItemImageExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */; };
+		22EEABAE2CDCAB7000959E5E /* MenuItemImageExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */; };
+		22EEABAF2CDCAB7000959E5E /* MenuItemImageExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */; };
 		29031E0719BFE8D400EFA1DF /* libchipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29031E0619BFE8D400EFA1DF /* libchipmunk.a */; };
 		29031E0919BFE8DE00EFA1DF /* libchipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29031E0819BFE8DE00EFA1DF /* libchipmunk.a */; };
 		291901431B05895600F8B4BA /* CCNinePatchImageParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 291901411B05895600F8B4BA /* CCNinePatchImageParser.h */; };
@@ -4892,6 +4899,9 @@
 		1AD71EED180E27CF00808F54 /* CCPhysicsDebugNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhysicsDebugNode.h; sourceTree = "<group>"; };
 		1AD71EEE180E27CF00808F54 /* CCPhysicsSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCPhysicsSprite.cpp; sourceTree = "<group>"; };
 		1AD71EEF180E27CF00808F54 /* CCPhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhysicsSprite.h; sourceTree = "<group>"; };
+		222A3E2B2CDB925B0062E4D9 /* cocos2d-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cocos2d-prefix.pch"; sourceTree = "<group>"; };
+		22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MenuItemImageExtension.cpp; sourceTree = "<group>"; };
+		22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuItemImageExtension.h; sourceTree = "<group>"; };
 		29031E0619BFE8D400EFA1DF /* libchipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libchipmunk.a; path = prebuilt/mac/libchipmunk.a; sourceTree = "<group>"; };
 		29031E0819BFE8DE00EFA1DF /* libchipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libchipmunk.a; path = prebuilt/ios/libchipmunk.a; sourceTree = "<group>"; };
 		2905E9CC1ACD3D8C00092DD2 /* libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libz.a; path = ../external/zlib/prebuilt/mac/libz.a; sourceTree = "<group>"; };
@@ -6194,6 +6204,7 @@
 		1551A334158F2AB200E66CFE = {
 			isa = PBXGroup;
 			children = (
+				22EEABA52CDCAAD500959E5E /* c_extenstions */,
 				46A15FCC1807A544005B8026 /* AUTHORS */,
 				1A57FFF7180BC5160088DEC7 /* CHANGELOG */,
 				50272539190BF1B900AAF4ED /* cocos2d.cpp */,
@@ -7436,6 +7447,16 @@
 			path = ../external/json;
 			sourceTree = "<group>";
 		};
+		22EEABA52CDCAAD500959E5E /* c_extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */,
+				22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */,
+			);
+			name = c_extenstions;
+			path = ../c_extenstions;
+			sourceTree = SOURCE_ROOT;
+		};
 		29031E0419BFE8BE00EFA1DF /* ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -8258,6 +8279,7 @@
 		50ABBF4E1926664700A911A9 /* mac */ = {
 			isa = PBXGroup;
 			children = (
+				222A3E2B2CDB925B0062E4D9 /* cocos2d-prefix.pch */,
 				50ABBF4F1926664700A911A9 /* CCApplication-mac.h */,
 				50ABBF501926664700A911A9 /* CCApplication-mac.mm */,
 				50ABBF511926664700A911A9 /* CCCommon-mac.mm */,
@@ -9569,6 +9591,7 @@
 				15AE181219AAD2F700C27E9E /* CCAnimation3D.h in Headers */,
 				182C5CD81A98F30500C30D34 /* Sprite3DReader.h in Headers */,
 				1A5702F0180BCE750088DEC7 /* CCTMXLayer.h in Headers */,
+				222A3E2C2CDB925B0062E4D9 /* cocos2d-prefix.pch in Headers */,
 				501216961AC47393009A4BEA /* CCPass.h in Headers */,
 				5020A1AD1D49912500E80C72 /* IkConstraint.h in Headers */,
 				50ABC01B1926664800A911A9 /* CCSAXParser.h in Headers */,
@@ -9613,6 +9636,7 @@
 				50FC3FA81D74C2A1001C936A /* CCEventListenerController.h in Headers */,
 				B665E2AC1AA80A6500DDB1C5 /* CCPUFlockCenteringAffector.h in Headers */,
 				5020A19B1D49912500E80C72 /* Event.h in Headers */,
+				22EEABAF2CDCAB7000959E5E /* MenuItemImageExtension.h in Headers */,
 				1A570312180BCF190088DEC7 /* CCComponentContainer.h in Headers */,
 				15AE1B7119AADA9900C27E9E /* CocosGUI.h in Headers */,
 				B665E2381AA80A6500DDB1C5 /* CCPUBoxEmitterTranslator.h in Headers */,
@@ -10071,6 +10095,7 @@
 				507B3DED1C31BDD30067B53E /* CCNavMeshUtils.h in Headers */,
 				507B3DEE1C31BDD30067B53E /* ccGLStateCache.h in Headers */,
 				507B3DEF1C31BDD30067B53E /* CCPUBaseForceAffector.h in Headers */,
+				22EEABAD2CDCAB7000959E5E /* MenuItemImageExtension.h in Headers */,
 				507B3DF01C31BDD30067B53E /* CCPUNoise.h in Headers */,
 				507B3DF11C31BDD30067B53E /* CocosGUI.h in Headers */,
 				507B3DF21C31BDD30067B53E /* CCActionProgressTimer.h in Headers */,
@@ -10884,6 +10909,7 @@
 				B677B0DC1B18492D006762CB /* CCNavMeshUtils.h in Headers */,
 				50ABBD9E1925AB4100A911A9 /* ccGLStateCache.h in Headers */,
 				B665E2111AA80A6500DDB1C5 /* CCPUBaseForceAffector.h in Headers */,
+				22EEABAE2CDCAB7000959E5E /* MenuItemImageExtension.h in Headers */,
 				B665E30D1AA80A6500DDB1C5 /* CCPUNoise.h in Headers */,
 				15AE1B9619AADA9A00C27E9E /* CocosGUI.h in Headers */,
 				1A57008C180BC5A10088DEC7 /* CCActionProgressTimer.h in Headers */,
@@ -12240,6 +12266,7 @@
 				5020A1E01D49912500E80C72 /* SkeletonAnimation.cpp in Sources */,
 				B29594B41926D5EC003EEF37 /* CCMeshCommand.cpp in Sources */,
 				15AE189619AAD33D00C27E9E /* CCMenuItemImageLoader.cpp in Sources */,
+				22EEABA72CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */,
 				B665E23E1AA80A6500DDB1C5 /* CCPUCircleEmitterTranslator.cpp in Sources */,
 				15AE1BB719AADFEF00C27E9E /* WebSocket.cpp in Sources */,
 				5020A20A1D49912500E80C72 /* Slot.c in Sources */,
@@ -12926,6 +12953,7 @@
 				507B3CF81C31BDD30067B53E /* DetourProximityGrid.cpp in Sources */,
 				507B3CF91C31BDD30067B53E /* CCFontCharMap.cpp in Sources */,
 				507B3CFA1C31BDD30067B53E /* DetourNode.cpp in Sources */,
+				22EEABAA2CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */,
 				507B3CFC1C31BDD30067B53E /* CCAnimate3D.cpp in Sources */,
 				507B3CFE1C31BDD30067B53E /* CCEventMouse.cpp in Sources */,
 				507B3CFF1C31BDD30067B53E /* CCPUScaleAffector.cpp in Sources */,
@@ -13596,6 +13624,7 @@
 				1A1645B3191B726C008C7C7F /* ConvertUTFWrapper.cpp in Sources */,
 				B6DD2FEA1B04825B00E47F5F /* DetourProximityGrid.cpp in Sources */,
 				1ABA68AF1888D700007D1BB4 /* CCFontCharMap.cpp in Sources */,
+				22EEABA92CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */,
 				B6DD2FD01B04825B00E47F5F /* DetourNode.cpp in Sources */,
 				15AE180D19AAD2F700C27E9E /* CCAnimate3D.cpp in Sources */,
 				50ABBE7A1925AB6F00A911A9 /* CCEventMouse.cpp in Sources */,
@@ -13746,6 +13775,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXCLUDED_ARCHS = "";
@@ -13760,6 +13790,7 @@
 					_USRDLL,
 				);
 				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_DYLIB_INSTALL_NAME = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13779,6 +13810,8 @@
 					"$(SRCROOT)/../external/uv/prebuilt/mac",
 				);
 				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-llibsql3";
 				USER_HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13803,6 +13836,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXCLUDED_ARCHS = "";
@@ -13818,6 +13852,7 @@
 					_USRDLL,
 				);
 				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_DYLIB_INSTALL_NAME = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -13837,6 +13872,7 @@
 					"$(SRCROOT)/../external/uv/prebuilt/mac",
 				);
 				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				OTHER_LDFLAGS = "-llibsql3";
 				USER_HEADER_SEARCH_PATHS = (
 					"$(inherited)",
