@@ -73,7 +73,7 @@ const Point ANCHOR_CC = Point(0.5f, 0.5f);
 
 // ========================================================================== //
 // declarations                                                               //
-
+namespace CCNodeUtils{
 static inline void alignNodeToParent(Node *node, Alignment nodeAlign, Alignment refAlign, const Size& padding);
 static inline void alignNodeToParent(Node *node, Alignment nodeAlign, Alignment refAlign);
 static inline void alignNodeToParent(Node *node, Alignment align, const Size& padding);
@@ -104,7 +104,10 @@ static std::vector<std::string> split(const std::string& s, char delim)
 }
 
 // ========================================================================== //
-// cocos2d objects                                                            //
+// cocos2d objects
+//
+
+
 
 static inline Node *createSizedNode(const Size& size)
 {
@@ -147,7 +150,7 @@ static inline void adjustNodePosition(Point& nodePos, const Point& refPos, const
     {
         nodePos.x = refPos.x + refSize.width;
     }
-
+    
     if (align & ALIGNMENT_BOTTOM)
     {
         nodePos.y = refPos.y;
@@ -176,7 +179,7 @@ static inline void adjustAnchorPoint(Point& anchorPt, Alignment align)
     {
         anchorPt.x = 1.0f;
     }
-
+    
     if (align & ALIGNMENT_BOTTOM)
     {
         anchorPt.y = 0.0f;
@@ -201,7 +204,7 @@ static inline void addNodePadding(Point& nodePos, Alignment align, const Size& p
     {
         nodePos.x -= padding.width;
     }
-
+    
     if (align & ALIGNMENT_BOTTOM)
     {
         nodePos.y += padding.height;
@@ -216,31 +219,31 @@ static inline void alignNodeToParent(Node *node, Alignment nodeAlign, Alignment 
 {
     Node *parent = node->getParent();
     CCAssert(parent, "Node must have a parent!");
-
+    
     Size parentSize = parent->getContentSize();
-
+    
     Point nodePos = node->getPosition();
     Point anchorPt = node->getAnchorPoint();
-
-    adjustNodePosition(nodePos, CCPointZero, parentSize, refAlign);
-
+    
+    adjustNodePosition(nodePos, cocos2d::Vec2::ZERO, parentSize, refAlign);
+    
     adjustAnchorPoint(anchorPt, nodeAlign);
-
+    
     addNodePadding(nodePos, nodeAlign, padding);
-
+    
     if (node->isIgnoreAnchorPointForPosition())
     {
         Size nodeSize = node->getContentSize();
-        nodePos = ccpSub(nodePos, Point(anchorPt.x * nodeSize.width, anchorPt.y * nodeSize.height));
+        nodePos = Vec2(nodePos - Point(anchorPt.x * nodeSize.width, anchorPt.y * nodeSize.height));
     }
-
+    
     node->setPosition(nodePos);
     node->setAnchorPoint(anchorPt);
 }
 
 static inline void alignNodeToParent(Node *node, Alignment nodeAlign, Alignment refAlign)
 {
-    alignNodeToParent(node, nodeAlign, refAlign, CCSizeZero);
+    alignNodeToParent(node, nodeAlign, refAlign, Size::ZERO);
 }
 
 static inline void alignNodeToParent(Node *node, Alignment align, const Size& padding)
@@ -250,41 +253,41 @@ static inline void alignNodeToParent(Node *node, Alignment align, const Size& pa
 
 static inline void alignNodeToParent(Node *node, Alignment align)
 {
-    alignNodeToParent(node, align, align, CCSizeZero);
+    alignNodeToParent(node, align, align, Size::ZERO);
 }
 
 static inline void alignNodeToNode(Node *node, Node *reference, Alignment nodeAlign, Alignment refAlign, const Size& padding)
 {
     CCAssert(node->getParent() && reference->getParent(), "Node and reference must have parents!");
-
+    
     Point nodePos = node->getPosition();
     Point anchorPt = node->getAnchorPoint();
-
+    
     Rect refRect = getRect(reference);
     if (node->getParent() != reference->getParent())
     {
         transformRect(refRect, reference->getParent(), node->getParent());
     }
-
+    
     adjustNodePosition(nodePos, refRect.origin, refRect.size, refAlign);
-
+    
     adjustAnchorPoint(anchorPt, nodeAlign);
-
+    
     addNodePadding(nodePos, nodeAlign, padding);
-
+    
     if (node->isIgnoreAnchorPointForPosition())
     {
         Size nodeSize = node->getContentSize();
-        nodePos = ccpSub(nodePos, Point(anchorPt.x * nodeSize.width, anchorPt.y * nodeSize.height));
+        nodePos = Vec2(nodePos - Point(anchorPt.x * nodeSize.width, anchorPt.y * nodeSize.height));
     }
-
+    
     node->setPosition(nodePos);
     node->setAnchorPoint(anchorPt);
 }
 
 static inline void alignNodeToNode(Node *node, Node *reference, Alignment nodeAlign, Alignment refAlign)
 {
-    alignNodeToNode(node, reference, nodeAlign, refAlign, CCSizeZero);
+    alignNodeToNode(node, reference, nodeAlign, refAlign, Size::ZERO);
 }
 
 static inline void alignNodeToNode(Node *node, Node *reference, Alignment align, const Size& padding)
@@ -294,50 +297,53 @@ static inline void alignNodeToNode(Node *node, Node *reference, Alignment align,
 
 static inline void alignNodeToNode(Node *node, Node *reference, Alignment align)
 {
-    alignNodeToNode(node, reference, align, align, CCSizeZero);
+    alignNodeToNode(node, reference, align, align, Size::ZERO);
 }
 
 static inline Rect getRect(Node *node)
 {
     Rect rect;
-
+    
     rect.size = node->getContentSize();
     rect.origin = node->getPosition();
-
+    
     Point refAnchorPt = node->getAnchorPoint();
-
+    
     if (node->isIgnoreAnchorPointForPosition())
     {
         // we're ignoring the anchor point for position but not for scale
-        rect.origin = ccpAdd(rect.origin, Point(refAnchorPt.x * rect.size.width, refAnchorPt.y * rect.size.height));
+        rect.origin = Vec2(rect.origin + Point(refAnchorPt.x * rect.size.width, refAnchorPt.y * rect.size.height));
     }
-
+    
     rect.size.width *= node->getScaleX();
     rect.size.height *= node->getScaleY();
-
-    rect.origin = ccpSub(rect.origin, Point(refAnchorPt.x * rect.size.width, refAnchorPt.y * rect.size.height));
-
+   
+    
+    rect.origin = Vec2(rect.origin - Point(refAnchorPt.x * rect.size.width, refAnchorPt.y * rect.size.height));
+    //rect.origin = ccpSub(rect.origin, Point(refAnchorPt.x * rect.size.width, refAnchorPt.y * rect.size.height));
+   
+   // Vec2::set(<#const Vec2 &v#>)
     return rect;
 }
 
 static inline Point& transformPoint(Point& point, Node *srcNode, Node *dstNode)
 {
     point = dstNode->convertToNodeSpace(
-        srcNode->convertToWorldSpace(point)
-    );
+                                        srcNode->convertToWorldSpace(point)
+                                        );
     return point;
 }
 
 static inline Rect& transformRect(Rect& rect, Node *srcNode, Node *dstNode)
 {
     Point topRight = Point(rect.getMaxX(), rect.getMaxY());
-
+    
     transformPoint(rect.origin, srcNode, dstNode);
     transformPoint(topRight,    srcNode, dstNode);
-
+    
     rect.size.width  = topRight.x - rect.origin.x;
     rect.size.height = topRight.y - rect.origin.y;
-
+    
     return rect;
 }
 
@@ -357,10 +363,10 @@ static inline Point ccpOnNodeBoundary(Node *node, float angle, float outset)
     Rect rect = getRect(node);
     rect = outsetOf(rect, outset);
     Point p = Point(0.5 * rect.size.width, 0.5 * rect.size.height);
-
+    
     angle = normalizeAngle(CC_DEGREES_TO_RADIANS(angle));
     float diagonalAngle = atan2f(rect.size.height, rect.size.width);
-
+    
     // top
     if (angle >= diagonalAngle && angle < M_PI - diagonalAngle)
     {
@@ -385,7 +391,7 @@ static inline Point ccpOnNodeBoundary(Node *node, float angle, float outset)
         p.x += 0.5f * rect.size.width;
         p.y += 0.5f * rect.size.width * tanf(angle);
     }
-
+    
     return p;
 }
 
@@ -393,26 +399,26 @@ static Texture2D *makeBitmapCopy(Node *node)
 {
     Point oldPos = node->getPosition();
     Point oldAnchor = node->getAnchorPoint();
-
+    
     // flip, since CCRenderTexture renders upside down
     node->setScaleY(-node->getScaleY());
     node->setAnchorPoint(Point(0.0f, 1.0f));
-    node->setPosition(CCPointZero);
-
+    node->setPosition(cocos2d::Vec2::ZERO);
+    
     Size size = getScaledContentSize(node);
-
-    CCRenderTexture *rt = CCRenderTexture::create(size.width, size.height);
+    
+    RenderTexture *rt = RenderTexture::create(size.width, size.height);
     rt->begin();
     node->visit();
     rt->end();
-
-    CCTexture2D *texture = rt->getSprite()->getTexture();
+    
+    Texture2D *texture = rt->getSprite()->getTexture();
     texture->setAntiAliasTexParameters();
-
+    
     node->setScaleY(-node->getScaleY());
     node->setAnchorPoint(oldAnchor);
     node->setPosition(oldPos);
-
+    
     return texture;
 }
 
@@ -430,32 +436,32 @@ static inline double normalizeAngle(double angle)
 
 static inline float cubicInterp(float x0, float x1, float x2, float x3, float t)
 {
-    return (               /*0.0f*/    powf(1.0f - t,  3.0f)  * x0 + 
-             3.0f *      t /*1.0f*/ * (powf(1.0f - t,  2.0f)) * x1 + 
-             3.0f * powf(t,  2.0f)  *      (1.0f - t)/*1.0f*/ * x2 +
-                    powf(t,  3.0f)                   /*0.0f*/ * x3   );
+    return (               /*0.0f*/    powf(1.0f - t,  3.0f)  * x0 +
+            3.0f *      t /*1.0f*/ * (powf(1.0f - t,  2.0f)) * x1 +
+            3.0f * powf(t,  2.0f)  *      (1.0f - t)/*1.0f*/ * x2 +
+            powf(t,  3.0f)                   /*0.0f*/ * x3   );
 }
 
 static inline bool isPointInRect(const Point& point, const Rect& rect)
 {
     return (point.x >= rect.origin.x && point.x <= rect.origin.x + rect.size.width)
-        && (point.y >= rect.origin.y && point.y <= rect.origin.y + rect.size.height);
+    && (point.y >= rect.origin.y && point.y <= rect.origin.y + rect.size.height);
 }
 
 static inline Point centerOf(const Size& size)
 {
     return Point(
-        0.5 * size.width,
-        0.5 * size.height
-    );
+                 0.5 * size.width,
+                 0.5 * size.height
+                 );
 }
 
 static inline Point centerOf(const Rect& rect)
 {
     return Point(
-        rect.origin.x + 0.5 * rect.size.width,
-        rect.origin.y + 0.5 * rect.size.height
-    );
+                 rect.origin.x + 0.5 * rect.size.width,
+                 rect.origin.y + 0.5 * rect.size.height
+                 );
 }
 
 static inline Point centerOf(Node *node)
@@ -463,12 +469,12 @@ static inline Point centerOf(Node *node)
     Point pos = node->getPosition();
     Size size = node->getContentSize();
     Point anchor = node->isIgnoreAnchorPointForPosition() ?
-        CCPointZero :
-        node->getAnchorPoint();
+    cocos2d::Vec2::ZERO :
+    node->getAnchorPoint();
     return Point(
-        pos.x + (0.5f - anchor.x) * size.width,
-        pos.y + (0.5f - anchor.y) * size.height
-    );
+                 pos.x + (0.5f - anchor.x) * size.width,
+                 pos.y + (0.5f - anchor.y) * size.height
+                 );
 }
 
 /**
@@ -481,9 +487,9 @@ static inline void recenterAnchorPoint(Node *node)
     Point anchor = node->getAnchorPoint();
     Size size = getScaledContentSize(node);
     node->setPosition(Point(
-        oldPos.x + (0.5f - anchor.x) * size.width,
-        oldPos.y + (0.5f - anchor.y) * size.height
-    ));
+                            oldPos.x + (0.5f - anchor.x) * size.width,
+                            oldPos.y + (0.5f - anchor.y) * size.height
+                            ));
     node->setAnchorPoint(Point(0.5f, 0.5f));
 }
 
@@ -529,15 +535,15 @@ static inline Rect getIntersection(const Rect& rectA, const Rect& rectB)
 {
     if (!rectA.intersectsRect(rectB))
     {
-        return CCRectZero;
+        return Rect::ZERO;
     }
-
+    
     Rect r;
     r.origin.x    = fmaxf(rectA.getMinX(), rectB.getMinX());
     r.origin.y    = fmaxf(rectA.getMinY(), rectB.getMinY());
     r.size.width  = fminf(rectA.getMaxX(), rectB.getMaxX()) - r.origin.x;
     r.size.height = fminf(rectA.getMaxY(), rectB.getMaxY()) - r.origin.y;
-
+    
     return r;
 }
 
@@ -571,9 +577,9 @@ T weighted_random(const std::map<T, float>& m)
     {
         sum += iter->second;
     }
-
+    
     float sample = rand_range(0.0, sum);
-
+    
     sum = 0;
     for (iter = m.begin(); iter != m.end(); ++iter)
     {
@@ -583,15 +589,15 @@ T weighted_random(const std::map<T, float>& m)
             return iter->first;
         }
     }
-
+    
     return NULL;
 }
 
 // ========================================================================== //
 // strings                                                                    //
 
-#include <algorithm> 
-#include <functional> 
+#include <algorithm>
+#include <functional>
 #include <cctype>
 #include <locale>
 
@@ -630,14 +636,14 @@ static inline std::string formatAsPercentage(float proportion)
 // ========================================================================== //
 // colors                                                                     //
 
-static inline void lerpColor3B(ccColor3B& result, const ccColor3B& c0, const ccColor3B& c1, float t)
+static inline void lerpColor3B(Color3B& result, const Color3B& c0, const Color3B& c1, float t)
 {
     result.r = c0.r + t * (c1.r - c0.r);
     result.g = c0.g + t * (c1.g - c0.g);
     result.b = c0.b + t * (c1.b - c0.b);
 }
 
-static inline void lerpColor4B(ccColor4B& result, const ccColor4B& c0, const ccColor4B& c1, float t)
+static inline void lerpColor4B(Color4B& result, const Color4B& c0, const Color4B& c1, float t)
 {
     result.r = c0.r + t * (c1.r - c0.r);
     result.g = c0.g + t * (c1.g - c0.g);
@@ -645,42 +651,42 @@ static inline void lerpColor4B(ccColor4B& result, const ccColor4B& c0, const ccC
     result.a = c0.a + t * (c1.a - c0.a);
 }
 
-static inline ccColor3B ccc3BFromccc4F(ccColor4F c)
+static inline Color3B ccc3BFromccc4F(Color4F c)
 {
-    ccColor3B c3 = {GLubyte(255.0f * c.r), GLubyte(255.0f * c.g), GLubyte(255.0f * c.b)};
+    Color3B c3 = {GLubyte(255.0f * c.r), GLubyte(255.0f * c.g), GLubyte(255.0f * c.b)};
     return c3;
 }
 
-static inline ccColor4B ccc4BFromccc3B(ccColor3B c)
+static inline Color4B ccc4BFromccc3B(Color3B c)
 {
-    ccColor4B c4 = {c.r, c.g, c.b, 0xff};
+    Color4B c4 = {c.r, c.g, c.b, 0xff};
     return c4;
 }
 
-static inline ccColor3B ccc3BFromccc4B(ccColor4B c)
+static inline Color3B ccc3BFromccc4B(Color4B c)
 {
-    ccColor3B c3 = {c.r, c.g, c.b};
+    Color3B c3 = {c.r, c.g, c.b};
     return c3;
 }
 
-static inline ccColor4B ccc4BFromHexString(const char *hexString)
+static inline Color4B ccc4BFromHexString(const char *hexString)
 {
     unsigned int len = strnlen(hexString, 11);
     CCAssert(len == 6 || len == 8 || len == 10, "Malformed color string");
-
+    
     const char *str = hexString;
     if (strncmp("0x", str, 2) == 0)
     {
         str += 2;
     }
-
+    
     len = strnlen(str, 9);
     CCAssert(len == 6 || len == 8, "Malformed color string");
-
+    
     if (len == 6)
     {
         unsigned int intVal = strtoul(str, NULL, 16);
-        ccColor4B c4 = {
+        Color4B c4 = {
             static_cast<GLubyte>((intVal & 0xff0000) >> 16),
             static_cast<GLubyte>((intVal & 0x00ff00) >>  8),
             static_cast<GLubyte>((intVal & 0x0000ff)),
@@ -691,7 +697,7 @@ static inline ccColor4B ccc4BFromHexString(const char *hexString)
     else
     {
         unsigned int intVal = strtoul(str, NULL, 16);
-        ccColor4B c4 = {
+        Color4B c4 = {
             static_cast<GLubyte>((intVal & 0xff000000) >> 24),
             static_cast<GLubyte>((intVal & 0x00ff0000) >> 16),
             static_cast<GLubyte>((intVal & 0x0000ff00) >>  8),
@@ -701,7 +707,7 @@ static inline ccColor4B ccc4BFromHexString(const char *hexString)
     }
 }
 
-static inline const char *hexStringFromccc4B(ccColor4B c)
+static inline const char *hexStringFromccc4B(Color4B c)
 {
     std::stringstream stream;
     stream << std::hex << std::setfill('0');
@@ -712,12 +718,33 @@ static inline const char *hexStringFromccc4B(ccColor4B c)
     return stream.str().c_str();
 }
 
-static inline void setColorAndOpacity(CCRGBAProtocol *obj, const ccColor4B& color4B)
+static inline void setColorAndOpacity(Node *obj, const Color4B& color4B)
 {
     obj->setColor(ccc3BFromccc4B(color4B));
     obj->setOpacity(color4B.a);
 }
 
+/*
+ static void GetWorldRect ( Node* n, CCPoint& w_left_bottom, CCPoint& w_right_top, CCPoint& w_center )
+ {
+ CCRect  r;
+ GetWorldRect ( n, r );
+ w_left_bottom = r.origin;
+ w_right_top = r.origin + r.size;
+ w_center = r.origin + r.size / 2;
+ }
+ 
+ static void GetWorldRect ( Node* n, CCRect& o_rect)
+ {
+ Size size = GetContentSize ( n );
+ auto w_matrix = n->nodeToWorldTransform();
+ size = SizeApplyAffineTransform ( size, w_matrix );
+ o_rect.origin = ccp ( w_matrix.tx, w_matrix.ty );
+ o_rect.size = size;
+ 
+ }
+ */
+}
 NS_CC_UTIL_END
 
 #endif /* __COCOS2DNODEUTIL_H__ */

@@ -1118,27 +1118,165 @@
 		1AC0269C1914068200FA920D /* ConvertUTF.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AC026991914068200FA920D /* ConvertUTF.h */; };
 		1AC0269D1914068200FA920D /* ConvertUTF.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AC026991914068200FA920D /* ConvertUTF.h */; };
 		222A3E2C2CDB925B0062E4D9 /* cocos2d-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 222A3E2B2CDB925B0062E4D9 /* cocos2d-prefix.pch */; };
-		228C4F022CEA273900C75501 /* LayoutLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4EFF2CEA273900C75501 /* LayoutLayer.h */; };
 		228C4F032CEA273900C75501 /* CCNodeUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4EFC2CEA273900C75501 /* CCNodeUtil.h */; };
-		228C4F042CEA273900C75501 /* FlexNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4EFD2CEA273900C75501 /* FlexNode.h */; };
-		228C4F052CEA273900C75501 /* FlexNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4EFE2CEA273900C75501 /* FlexNode.cpp */; };
-		228C4F062CEA273900C75501 /* LayoutLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F002CEA273900C75501 /* LayoutLayer.cpp */; };
-		228C4F072CEA273900C75501 /* LayoutLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4EFF2CEA273900C75501 /* LayoutLayer.h */; };
 		228C4F082CEA273900C75501 /* CCNodeUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4EFC2CEA273900C75501 /* CCNodeUtil.h */; };
-		228C4F092CEA273900C75501 /* FlexNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4EFD2CEA273900C75501 /* FlexNode.h */; };
-		228C4F0A2CEA273900C75501 /* FlexNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4EFE2CEA273900C75501 /* FlexNode.cpp */; };
-		228C4F0B2CEA273900C75501 /* LayoutLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F002CEA273900C75501 /* LayoutLayer.cpp */; };
-		228C4F0C2CEA273900C75501 /* FlexNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4EFE2CEA273900C75501 /* FlexNode.cpp */; };
-		228C4F0D2CEA273900C75501 /* LayoutLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F002CEA273900C75501 /* LayoutLayer.cpp */; };
-		228C4F0E2CEA273900C75501 /* LayoutLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4EFF2CEA273900C75501 /* LayoutLayer.h */; };
 		228C4F0F2CEA273900C75501 /* CCNodeUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4EFC2CEA273900C75501 /* CCNodeUtil.h */; };
-		228C4F102CEA273900C75501 /* FlexNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4EFD2CEA273900C75501 /* FlexNode.h */; };
-		228C4F1A2CEA2F9600C75501 /* Layout2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F192CEA2F9600C75501 /* Layout2.cpp */; };
-		228C4F1B2CEA2F9600C75501 /* Layout2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F192CEA2F9600C75501 /* Layout2.cpp */; };
-		228C4F1C2CEA2F9600C75501 /* Layout2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F192CEA2F9600C75501 /* Layout2.cpp */; };
-		228C4F1E2CEA2FDD00C75501 /* Layout2.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F1D2CEA2FDD00C75501 /* Layout2.h */; };
-		228C4F1F2CEA2FDD00C75501 /* Layout2.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F1D2CEA2FDD00C75501 /* Layout2.h */; };
-		228C4F202CEA2FDD00C75501 /* Layout2.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F1D2CEA2FDD00C75501 /* Layout2.h */; };
+		228C4F872CEADA4E00C75501 /* BoxSizing.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F4C2CEADA4E00C75501 /* BoxSizing.h */; };
+		228C4F882CEADA4E00C75501 /* Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F372CEADA4E00C75501 /* Cache.h */; };
+		228C4F892CEADA4E00C75501 /* FloatOptional.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F6B2CEADA4E00C75501 /* FloatOptional.h */; };
+		228C4F8A2CEADA4E00C75501 /* Wrap.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F5D2CEADA4E00C75501 /* Wrap.h */; };
+		228C4F8B2CEADA4E00C75501 /* Errata.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F512CEADA4E00C75501 /* Errata.h */; };
+		228C4F8C2CEADA4E00C75501 /* SmallValueBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F6D2CEADA4E00C75501 /* SmallValueBuffer.h */; };
+		228C4F8D2CEADA4E00C75501 /* Justify.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F552CEADA4E00C75501 /* Justify.h */; };
+		228C4F8E2CEADA4E00C75501 /* Direction.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F4E2CEADA4E00C75501 /* Direction.h */; };
+		228C4F8F2CEADA4E00C75501 /* StyleLength.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F6F2CEADA4E00C75501 /* StyleLength.h */; };
+		228C4F902CEADA4E00C75501 /* MeasureMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F572CEADA4E00C75501 /* MeasureMode.h */; };
+		228C4F912CEADA4E00C75501 /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F672CEADA4E00C75501 /* Node.h */; };
+		228C4F922CEADA4E00C75501 /* StyleValueHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F712CEADA4E00C75501 /* StyleValueHandle.h */; };
+		228C4F932CEADA4E00C75501 /* YogaEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F5E2CEADA4E00C75501 /* YogaEnums.h */; };
+		228C4F942CEADA4E00C75501 /* NodeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F582CEADA4E00C75501 /* NodeType.h */; };
+		228C4F952CEADA4E00C75501 /* Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F482CEADA4E00C75501 /* Log.h */; };
+		228C4F962CEADA4E00C75501 /* LayoutableChildren.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F642CEADA4E00C75501 /* LayoutableChildren.h */; };
+		228C4F972CEADA4E00C75501 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F602CEADA4E00C75501 /* event.h */; };
+		228C4F982CEADA4E00C75501 /* StyleSizeLength.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F702CEADA4E00C75501 /* StyleSizeLength.h */; };
+		228C4F992CEADA4E00C75501 /* Comparison.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F6A2CEADA4E00C75501 /* Comparison.h */; };
+		228C4F9A2CEADA4E00C75501 /* TrailingPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F412CEADA4E00C75501 /* TrailingPosition.h */; };
+		228C4F9B2CEADA4E00C75501 /* StyleValuePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F722CEADA4E00C75501 /* StyleValuePool.h */; };
+		228C4F9C2CEADA4E00C75501 /* Dimension.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F4D2CEADA4E00C75501 /* Dimension.h */; };
+		228C4F9D2CEADA4E00C75501 /* PositionType.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F5B2CEADA4E00C75501 /* PositionType.h */; };
+		228C4F9E2CEADA4E00C75501 /* LayoutResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F652CEADA4E00C75501 /* LayoutResults.h */; };
+		228C4F9F2CEADA4E00C75501 /* Overflow.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F592CEADA4E00C75501 /* Overflow.h */; };
+		228C4FA02CEADA4E00C75501 /* ExperimentalFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F522CEADA4E00C75501 /* ExperimentalFeature.h */; };
+		228C4FA12CEADA4E00C75501 /* AbsoluteLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F312CEADA4E00C75501 /* AbsoluteLayout.h */; };
+		228C4FA22CEADA4E00C75501 /* CachedMeasurement.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F632CEADA4E00C75501 /* CachedMeasurement.h */; };
+		228C4FA32CEADA4E00C75501 /* FlexLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F3C2CEADA4E00C75501 /* FlexLine.h */; };
+		228C4FA42CEADA4E00C75501 /* Display.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F4F2CEADA4E00C75501 /* Display.h */; };
+		228C4FA52CEADA4E00C75501 /* Style.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F6E2CEADA4E00C75501 /* Style.h */; };
+		228C4FA62CEADA4E00C75501 /* PixelGrid.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F3E2CEADA4E00C75501 /* PixelGrid.h */; };
+		228C4FA72CEADA4E00C75501 /* LogLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F562CEADA4E00C75501 /* LogLevel.h */; };
+		228C4FA82CEADA4E00C75501 /* Align.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F4B2CEADA4E00C75501 /* Align.h */; };
+		228C4FA92CEADA4E00C75501 /* YGNodeStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F7F2CEADA4E00C75501 /* YGNodeStyle.h */; };
+		228C4FAA2CEADA4E00C75501 /* Gutter.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F542CEADA4E00C75501 /* Gutter.h */; };
+		228C4FAB2CEADA4E00C75501 /* Align.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F332CEADA4E00C75501 /* Align.h */; };
+		228C4FAC2CEADA4E00C75501 /* YGValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F832CEADA4E00C75501 /* YGValue.h */; };
+		228C4FAD2CEADA4E00C75501 /* BoundAxis.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F362CEADA4E00C75501 /* BoundAxis.h */; };
+		228C4FAE2CEADA4E00C75501 /* YGPixelGrid.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F812CEADA4E00C75501 /* YGPixelGrid.h */; };
+		228C4FAF2CEADA4E00C75501 /* Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F852CEADA4E00C75501 /* Yoga.h */; };
+		228C4FB02CEADA4E00C75501 /* YGNodeLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F7D2CEADA4E00C75501 /* YGNodeLayout.h */; };
+		228C4FB12CEADA4E00C75501 /* YGMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F7A2CEADA4E00C75501 /* YGMacros.h */; };
+		228C4FB22CEADA4E00C75501 /* YGConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F762CEADA4E00C75501 /* YGConfig.h */; };
+		228C4FB32CEADA4E00C75501 /* FlexDirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F3B2CEADA4E00C75501 /* FlexDirection.h */; };
+		228C4FB42CEADA4E00C75501 /* YGNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F7B2CEADA4E00C75501 /* YGNode.h */; };
+		228C4FB52CEADA4E00C75501 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F432CEADA4E00C75501 /* Config.h */; };
+		228C4FB62CEADA4E00C75501 /* SizingMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F402CEADA4E00C75501 /* SizingMode.h */; };
+		228C4FB72CEADA4E00C75501 /* AssertFatal.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F462CEADA4E00C75501 /* AssertFatal.h */; };
+		228C4FB82CEADA4E00C75501 /* YGEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F782CEADA4E00C75501 /* YGEnums.h */; };
+		228C4FB92CEADA4E00C75501 /* CalculateLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F392CEADA4E00C75501 /* CalculateLayout.h */; };
+		228C4FBA2CEADA4E00C75501 /* Unit.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F5C2CEADA4E00C75501 /* Unit.h */; };
+		228C4FBB2CEADA4E00C75501 /* FlexDirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F532CEADA4E00C75501 /* FlexDirection.h */; };
+		228C4FBC2CEADA4E00C75501 /* PhysicalEdge.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F5A2CEADA4E00C75501 /* PhysicalEdge.h */; };
+		228C4FBD2CEADA4E00C75501 /* Baseline.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F342CEADA4E00C75501 /* Baseline.h */; };
+		228C4FBE2CEADA4E00C75501 /* Edge.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F502CEADA4E00C75501 /* Edge.h */; };
+		228C4FBF2CEADA4E00C75501 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F492CEADA4E00C75501 /* Log.cpp */; };
+		228C4FC02CEADA4E00C75501 /* YGPixelGrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F822CEADA4E00C75501 /* YGPixelGrid.cpp */; };
+		228C4FC12CEADA4E00C75501 /* YGNodeLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F7E2CEADA4E00C75501 /* YGNodeLayout.cpp */; };
+		228C4FC22CEADA4E00C75501 /* LayoutResults.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F662CEADA4E00C75501 /* LayoutResults.cpp */; };
+		228C4FC32CEADA4E00C75501 /* PixelGrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F3F2CEADA4E00C75501 /* PixelGrid.cpp */; };
+		228C4FC42CEADA4E00C75501 /* YGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F7C2CEADA4E00C75501 /* YGNode.cpp */; };
+		228C4FC52CEADA4E00C75501 /* YGValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F842CEADA4E00C75501 /* YGValue.cpp */; };
+		228C4FC62CEADA4E00C75501 /* Baseline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F352CEADA4E00C75501 /* Baseline.cpp */; };
+		228C4FC72CEADA4E00C75501 /* YGNodeStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F802CEADA4E00C75501 /* YGNodeStyle.cpp */; };
+		228C4FC82CEADA4E00C75501 /* AssertFatal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F472CEADA4E00C75501 /* AssertFatal.cpp */; };
+		228C4FC92CEADA4E00C75501 /* AbsoluteLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F322CEADA4E00C75501 /* AbsoluteLayout.cpp */; };
+		228C4FCA2CEADA4E00C75501 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F612CEADA4E00C75501 /* event.cpp */; };
+		228C4FCB2CEADA4E00C75501 /* FlexLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F3D2CEADA4E00C75501 /* FlexLine.cpp */; };
+		228C4FCC2CEADA4E00C75501 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F682CEADA4E00C75501 /* Node.cpp */; };
+		228C4FCD2CEADA4E00C75501 /* YGEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F792CEADA4E00C75501 /* YGEnums.cpp */; };
+		228C4FCE2CEADA4E00C75501 /* CalculateLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F3A2CEADA4E00C75501 /* CalculateLayout.cpp */; };
+		228C4FCF2CEADA4E00C75501 /* YGConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F772CEADA4E00C75501 /* YGConfig.cpp */; };
+		228C4FD02CEADA4E00C75501 /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F442CEADA4E00C75501 /* Config.cpp */; };
+		228C4FD12CEADA4E00C75501 /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F382CEADA4E00C75501 /* Cache.cpp */; };
+		228C4FD22CEADA4E00C75501 /* BoxSizing.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F4C2CEADA4E00C75501 /* BoxSizing.h */; };
+		228C4FD32CEADA4E00C75501 /* Cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F372CEADA4E00C75501 /* Cache.h */; };
+		228C4FD42CEADA4E00C75501 /* FloatOptional.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F6B2CEADA4E00C75501 /* FloatOptional.h */; };
+		228C4FD52CEADA4E00C75501 /* Wrap.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F5D2CEADA4E00C75501 /* Wrap.h */; };
+		228C4FD62CEADA4E00C75501 /* Errata.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F512CEADA4E00C75501 /* Errata.h */; };
+		228C4FD72CEADA4E00C75501 /* SmallValueBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F6D2CEADA4E00C75501 /* SmallValueBuffer.h */; };
+		228C4FD82CEADA4E00C75501 /* Justify.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F552CEADA4E00C75501 /* Justify.h */; };
+		228C4FD92CEADA4E00C75501 /* Direction.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F4E2CEADA4E00C75501 /* Direction.h */; };
+		228C4FDA2CEADA4E00C75501 /* StyleLength.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F6F2CEADA4E00C75501 /* StyleLength.h */; };
+		228C4FDB2CEADA4E00C75501 /* MeasureMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F572CEADA4E00C75501 /* MeasureMode.h */; };
+		228C4FDC2CEADA4E00C75501 /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F672CEADA4E00C75501 /* Node.h */; };
+		228C4FDD2CEADA4E00C75501 /* StyleValueHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F712CEADA4E00C75501 /* StyleValueHandle.h */; };
+		228C4FDE2CEADA4E00C75501 /* YogaEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F5E2CEADA4E00C75501 /* YogaEnums.h */; };
+		228C4FDF2CEADA4E00C75501 /* NodeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F582CEADA4E00C75501 /* NodeType.h */; };
+		228C4FE02CEADA4E00C75501 /* Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F482CEADA4E00C75501 /* Log.h */; };
+		228C4FE12CEADA4E00C75501 /* LayoutableChildren.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F642CEADA4E00C75501 /* LayoutableChildren.h */; };
+		228C4FE22CEADA4E00C75501 /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F602CEADA4E00C75501 /* event.h */; };
+		228C4FE32CEADA4E00C75501 /* StyleSizeLength.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F702CEADA4E00C75501 /* StyleSizeLength.h */; };
+		228C4FE42CEADA4E00C75501 /* Comparison.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F6A2CEADA4E00C75501 /* Comparison.h */; };
+		228C4FE52CEADA4E00C75501 /* TrailingPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F412CEADA4E00C75501 /* TrailingPosition.h */; };
+		228C4FE62CEADA4E00C75501 /* StyleValuePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F722CEADA4E00C75501 /* StyleValuePool.h */; };
+		228C4FE72CEADA4E00C75501 /* Dimension.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F4D2CEADA4E00C75501 /* Dimension.h */; };
+		228C4FE82CEADA4E00C75501 /* PositionType.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F5B2CEADA4E00C75501 /* PositionType.h */; };
+		228C4FE92CEADA4E00C75501 /* LayoutResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F652CEADA4E00C75501 /* LayoutResults.h */; };
+		228C4FEA2CEADA4E00C75501 /* Overflow.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F592CEADA4E00C75501 /* Overflow.h */; };
+		228C4FEB2CEADA4E00C75501 /* ExperimentalFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F522CEADA4E00C75501 /* ExperimentalFeature.h */; };
+		228C4FEC2CEADA4E00C75501 /* AbsoluteLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F312CEADA4E00C75501 /* AbsoluteLayout.h */; };
+		228C4FED2CEADA4E00C75501 /* CachedMeasurement.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F632CEADA4E00C75501 /* CachedMeasurement.h */; };
+		228C4FEE2CEADA4E00C75501 /* FlexLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F3C2CEADA4E00C75501 /* FlexLine.h */; };
+		228C4FEF2CEADA4E00C75501 /* Display.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F4F2CEADA4E00C75501 /* Display.h */; };
+		228C4FF02CEADA4E00C75501 /* Style.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F6E2CEADA4E00C75501 /* Style.h */; };
+		228C4FF12CEADA4E00C75501 /* PixelGrid.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F3E2CEADA4E00C75501 /* PixelGrid.h */; };
+		228C4FF22CEADA4E00C75501 /* LogLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F562CEADA4E00C75501 /* LogLevel.h */; };
+		228C4FF32CEADA4E00C75501 /* Align.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F4B2CEADA4E00C75501 /* Align.h */; };
+		228C4FF42CEADA4E00C75501 /* YGNodeStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F7F2CEADA4E00C75501 /* YGNodeStyle.h */; };
+		228C4FF52CEADA4E00C75501 /* Gutter.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F542CEADA4E00C75501 /* Gutter.h */; };
+		228C4FF62CEADA4E00C75501 /* Align.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F332CEADA4E00C75501 /* Align.h */; };
+		228C4FF72CEADA4E00C75501 /* YGValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F832CEADA4E00C75501 /* YGValue.h */; };
+		228C4FF82CEADA4E00C75501 /* BoundAxis.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F362CEADA4E00C75501 /* BoundAxis.h */; };
+		228C4FF92CEADA4E00C75501 /* YGPixelGrid.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F812CEADA4E00C75501 /* YGPixelGrid.h */; };
+		228C4FFA2CEADA4E00C75501 /* Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F852CEADA4E00C75501 /* Yoga.h */; };
+		228C4FFB2CEADA4E00C75501 /* YGNodeLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F7D2CEADA4E00C75501 /* YGNodeLayout.h */; };
+		228C4FFC2CEADA4E00C75501 /* YGMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F7A2CEADA4E00C75501 /* YGMacros.h */; };
+		228C4FFD2CEADA4E00C75501 /* YGConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F762CEADA4E00C75501 /* YGConfig.h */; };
+		228C4FFE2CEADA4E00C75501 /* FlexDirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F3B2CEADA4E00C75501 /* FlexDirection.h */; };
+		228C4FFF2CEADA4E00C75501 /* YGNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F7B2CEADA4E00C75501 /* YGNode.h */; };
+		228C50002CEADA4E00C75501 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F432CEADA4E00C75501 /* Config.h */; };
+		228C50012CEADA4E00C75501 /* SizingMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F402CEADA4E00C75501 /* SizingMode.h */; };
+		228C50022CEADA4E00C75501 /* AssertFatal.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F462CEADA4E00C75501 /* AssertFatal.h */; };
+		228C50032CEADA4E00C75501 /* YGEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F782CEADA4E00C75501 /* YGEnums.h */; };
+		228C50042CEADA4E00C75501 /* CalculateLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F392CEADA4E00C75501 /* CalculateLayout.h */; };
+		228C50052CEADA4E00C75501 /* Unit.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F5C2CEADA4E00C75501 /* Unit.h */; };
+		228C50062CEADA4E00C75501 /* FlexDirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F532CEADA4E00C75501 /* FlexDirection.h */; };
+		228C50072CEADA4E00C75501 /* PhysicalEdge.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F5A2CEADA4E00C75501 /* PhysicalEdge.h */; };
+		228C50082CEADA4E00C75501 /* Baseline.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F342CEADA4E00C75501 /* Baseline.h */; };
+		228C50092CEADA4E00C75501 /* Edge.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C4F502CEADA4E00C75501 /* Edge.h */; };
+		228C500A2CEADA4E00C75501 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F492CEADA4E00C75501 /* Log.cpp */; };
+		228C500B2CEADA4E00C75501 /* YGPixelGrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F822CEADA4E00C75501 /* YGPixelGrid.cpp */; };
+		228C500C2CEADA4E00C75501 /* YGNodeLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F7E2CEADA4E00C75501 /* YGNodeLayout.cpp */; };
+		228C500D2CEADA4E00C75501 /* LayoutResults.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F662CEADA4E00C75501 /* LayoutResults.cpp */; };
+		228C500E2CEADA4E00C75501 /* PixelGrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F3F2CEADA4E00C75501 /* PixelGrid.cpp */; };
+		228C500F2CEADA4E00C75501 /* YGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F7C2CEADA4E00C75501 /* YGNode.cpp */; };
+		228C50102CEADA4E00C75501 /* YGValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F842CEADA4E00C75501 /* YGValue.cpp */; };
+		228C50112CEADA4E00C75501 /* Baseline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F352CEADA4E00C75501 /* Baseline.cpp */; };
+		228C50122CEADA4E00C75501 /* YGNodeStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F802CEADA4E00C75501 /* YGNodeStyle.cpp */; };
+		228C50132CEADA4E00C75501 /* AssertFatal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F472CEADA4E00C75501 /* AssertFatal.cpp */; };
+		228C50142CEADA4E00C75501 /* AbsoluteLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F322CEADA4E00C75501 /* AbsoluteLayout.cpp */; };
+		228C50152CEADA4E00C75501 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F612CEADA4E00C75501 /* event.cpp */; };
+		228C50162CEADA4E00C75501 /* FlexLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F3D2CEADA4E00C75501 /* FlexLine.cpp */; };
+		228C50172CEADA4E00C75501 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F682CEADA4E00C75501 /* Node.cpp */; };
+		228C50182CEADA4E00C75501 /* YGEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F792CEADA4E00C75501 /* YGEnums.cpp */; };
+		228C50192CEADA4E00C75501 /* CalculateLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F3A2CEADA4E00C75501 /* CalculateLayout.cpp */; };
+		228C501A2CEADA4E00C75501 /* YGConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F772CEADA4E00C75501 /* YGConfig.cpp */; };
+		228C501B2CEADA4E00C75501 /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F442CEADA4E00C75501 /* Config.cpp */; };
+		228C501C2CEADA4E00C75501 /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F382CEADA4E00C75501 /* Cache.cpp */; };
+		228C501F2CEADD7000C75501 /* YogaNode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 228C501D2CEADD7000C75501 /* YogaNode.hpp */; };
+		228C50202CEADD7000C75501 /* YogaNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C501E2CEADD7000C75501 /* YogaNode.cpp */; };
+		228C50212CEADD7000C75501 /* YogaNode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 228C501D2CEADD7000C75501 /* YogaNode.hpp */; };
+		228C50222CEADD7000C75501 /* YogaNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C501E2CEADD7000C75501 /* YogaNode.cpp */; };
+		228C50232CEADD7000C75501 /* YogaNode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 228C501D2CEADD7000C75501 /* YogaNode.hpp */; };
+		228C50242CEADD7000C75501 /* YogaNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C501E2CEADD7000C75501 /* YogaNode.cpp */; };
 		22EEABA72CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
 		22EEABA92CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
 		22EEABAA2CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
@@ -4927,12 +5065,85 @@
 		1AD71EEF180E27CF00808F54 /* CCPhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhysicsSprite.h; sourceTree = "<group>"; };
 		222A3E2B2CDB925B0062E4D9 /* cocos2d-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cocos2d-prefix.pch"; sourceTree = "<group>"; };
 		228C4EFC2CEA273900C75501 /* CCNodeUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCNodeUtil.h; sourceTree = "<group>"; };
-		228C4EFD2CEA273900C75501 /* FlexNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexNode.h; sourceTree = "<group>"; };
-		228C4EFE2CEA273900C75501 /* FlexNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FlexNode.cpp; sourceTree = "<group>"; };
-		228C4EFF2CEA273900C75501 /* LayoutLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayoutLayer.h; sourceTree = "<group>"; };
-		228C4F002CEA273900C75501 /* LayoutLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutLayer.cpp; sourceTree = "<group>"; };
-		228C4F192CEA2F9600C75501 /* Layout2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Layout2.cpp; sourceTree = "<group>"; };
-		228C4F1D2CEA2FDD00C75501 /* Layout2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Layout2.h; sourceTree = "<group>"; };
+		228C4F312CEADA4E00C75501 /* AbsoluteLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbsoluteLayout.h; sourceTree = "<group>"; };
+		228C4F322CEADA4E00C75501 /* AbsoluteLayout.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AbsoluteLayout.cpp; sourceTree = "<group>"; };
+		228C4F332CEADA4E00C75501 /* Align.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Align.h; sourceTree = "<group>"; };
+		228C4F342CEADA4E00C75501 /* Baseline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Baseline.h; sourceTree = "<group>"; };
+		228C4F352CEADA4E00C75501 /* Baseline.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Baseline.cpp; sourceTree = "<group>"; };
+		228C4F362CEADA4E00C75501 /* BoundAxis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundAxis.h; sourceTree = "<group>"; };
+		228C4F372CEADA4E00C75501 /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		228C4F382CEADA4E00C75501 /* Cache.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cache.cpp; sourceTree = "<group>"; };
+		228C4F392CEADA4E00C75501 /* CalculateLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculateLayout.h; sourceTree = "<group>"; };
+		228C4F3A2CEADA4E00C75501 /* CalculateLayout.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CalculateLayout.cpp; sourceTree = "<group>"; };
+		228C4F3B2CEADA4E00C75501 /* FlexDirection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexDirection.h; sourceTree = "<group>"; };
+		228C4F3C2CEADA4E00C75501 /* FlexLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexLine.h; sourceTree = "<group>"; };
+		228C4F3D2CEADA4E00C75501 /* FlexLine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FlexLine.cpp; sourceTree = "<group>"; };
+		228C4F3E2CEADA4E00C75501 /* PixelGrid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PixelGrid.h; sourceTree = "<group>"; };
+		228C4F3F2CEADA4E00C75501 /* PixelGrid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PixelGrid.cpp; sourceTree = "<group>"; };
+		228C4F402CEADA4E00C75501 /* SizingMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SizingMode.h; sourceTree = "<group>"; };
+		228C4F412CEADA4E00C75501 /* TrailingPosition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailingPosition.h; sourceTree = "<group>"; };
+		228C4F432CEADA4E00C75501 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		228C4F442CEADA4E00C75501 /* Config.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Config.cpp; sourceTree = "<group>"; };
+		228C4F462CEADA4E00C75501 /* AssertFatal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssertFatal.h; sourceTree = "<group>"; };
+		228C4F472CEADA4E00C75501 /* AssertFatal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AssertFatal.cpp; sourceTree = "<group>"; };
+		228C4F482CEADA4E00C75501 /* Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		228C4F492CEADA4E00C75501 /* Log.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = "<group>"; };
+		228C4F4B2CEADA4E00C75501 /* Align.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Align.h; sourceTree = "<group>"; };
+		228C4F4C2CEADA4E00C75501 /* BoxSizing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoxSizing.h; sourceTree = "<group>"; };
+		228C4F4D2CEADA4E00C75501 /* Dimension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dimension.h; sourceTree = "<group>"; };
+		228C4F4E2CEADA4E00C75501 /* Direction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Direction.h; sourceTree = "<group>"; };
+		228C4F4F2CEADA4E00C75501 /* Display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
+		228C4F502CEADA4E00C75501 /* Edge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Edge.h; sourceTree = "<group>"; };
+		228C4F512CEADA4E00C75501 /* Errata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Errata.h; sourceTree = "<group>"; };
+		228C4F522CEADA4E00C75501 /* ExperimentalFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExperimentalFeature.h; sourceTree = "<group>"; };
+		228C4F532CEADA4E00C75501 /* FlexDirection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexDirection.h; sourceTree = "<group>"; };
+		228C4F542CEADA4E00C75501 /* Gutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gutter.h; sourceTree = "<group>"; };
+		228C4F552CEADA4E00C75501 /* Justify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Justify.h; sourceTree = "<group>"; };
+		228C4F562CEADA4E00C75501 /* LogLevel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogLevel.h; sourceTree = "<group>"; };
+		228C4F572CEADA4E00C75501 /* MeasureMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeasureMode.h; sourceTree = "<group>"; };
+		228C4F582CEADA4E00C75501 /* NodeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeType.h; sourceTree = "<group>"; };
+		228C4F592CEADA4E00C75501 /* Overflow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Overflow.h; sourceTree = "<group>"; };
+		228C4F5A2CEADA4E00C75501 /* PhysicalEdge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicalEdge.h; sourceTree = "<group>"; };
+		228C4F5B2CEADA4E00C75501 /* PositionType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PositionType.h; sourceTree = "<group>"; };
+		228C4F5C2CEADA4E00C75501 /* Unit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		228C4F5D2CEADA4E00C75501 /* Wrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wrap.h; sourceTree = "<group>"; };
+		228C4F5E2CEADA4E00C75501 /* YogaEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaEnums.h; sourceTree = "<group>"; };
+		228C4F602CEADA4E00C75501 /* event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = event.h; sourceTree = "<group>"; };
+		228C4F612CEADA4E00C75501 /* event.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = event.cpp; sourceTree = "<group>"; };
+		228C4F632CEADA4E00C75501 /* CachedMeasurement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CachedMeasurement.h; sourceTree = "<group>"; };
+		228C4F642CEADA4E00C75501 /* LayoutableChildren.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayoutableChildren.h; sourceTree = "<group>"; };
+		228C4F652CEADA4E00C75501 /* LayoutResults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayoutResults.h; sourceTree = "<group>"; };
+		228C4F662CEADA4E00C75501 /* LayoutResults.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LayoutResults.cpp; sourceTree = "<group>"; };
+		228C4F672CEADA4E00C75501 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		228C4F682CEADA4E00C75501 /* Node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		228C4F6A2CEADA4E00C75501 /* Comparison.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comparison.h; sourceTree = "<group>"; };
+		228C4F6B2CEADA4E00C75501 /* FloatOptional.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatOptional.h; sourceTree = "<group>"; };
+		228C4F6D2CEADA4E00C75501 /* SmallValueBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmallValueBuffer.h; sourceTree = "<group>"; };
+		228C4F6E2CEADA4E00C75501 /* Style.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Style.h; sourceTree = "<group>"; };
+		228C4F6F2CEADA4E00C75501 /* StyleLength.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleLength.h; sourceTree = "<group>"; };
+		228C4F702CEADA4E00C75501 /* StyleSizeLength.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleSizeLength.h; sourceTree = "<group>"; };
+		228C4F712CEADA4E00C75501 /* StyleValueHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleValueHandle.h; sourceTree = "<group>"; };
+		228C4F722CEADA4E00C75501 /* StyleValuePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleValuePool.h; sourceTree = "<group>"; };
+		228C4F742CEADA4E00C75501 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		228C4F752CEADA4E00C75501 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		228C4F762CEADA4E00C75501 /* YGConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGConfig.h; sourceTree = "<group>"; };
+		228C4F772CEADA4E00C75501 /* YGConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YGConfig.cpp; sourceTree = "<group>"; };
+		228C4F782CEADA4E00C75501 /* YGEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGEnums.h; sourceTree = "<group>"; };
+		228C4F792CEADA4E00C75501 /* YGEnums.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YGEnums.cpp; sourceTree = "<group>"; };
+		228C4F7A2CEADA4E00C75501 /* YGMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGMacros.h; sourceTree = "<group>"; };
+		228C4F7B2CEADA4E00C75501 /* YGNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGNode.h; sourceTree = "<group>"; };
+		228C4F7C2CEADA4E00C75501 /* YGNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YGNode.cpp; sourceTree = "<group>"; };
+		228C4F7D2CEADA4E00C75501 /* YGNodeLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGNodeLayout.h; sourceTree = "<group>"; };
+		228C4F7E2CEADA4E00C75501 /* YGNodeLayout.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YGNodeLayout.cpp; sourceTree = "<group>"; };
+		228C4F7F2CEADA4E00C75501 /* YGNodeStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGNodeStyle.h; sourceTree = "<group>"; };
+		228C4F802CEADA4E00C75501 /* YGNodeStyle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YGNodeStyle.cpp; sourceTree = "<group>"; };
+		228C4F812CEADA4E00C75501 /* YGPixelGrid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGPixelGrid.h; sourceTree = "<group>"; };
+		228C4F822CEADA4E00C75501 /* YGPixelGrid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YGPixelGrid.cpp; sourceTree = "<group>"; };
+		228C4F832CEADA4E00C75501 /* YGValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGValue.h; sourceTree = "<group>"; };
+		228C4F842CEADA4E00C75501 /* YGValue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YGValue.cpp; sourceTree = "<group>"; };
+		228C4F852CEADA4E00C75501 /* Yoga.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Yoga.h; sourceTree = "<group>"; };
+		228C501D2CEADD7000C75501 /* YogaNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = YogaNode.hpp; sourceTree = "<group>"; };
+		228C501E2CEADD7000C75501 /* YogaNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YogaNode.cpp; sourceTree = "<group>"; };
 		22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MenuItemImageExtension.cpp; sourceTree = "<group>"; };
 		22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuItemImageExtension.h; sourceTree = "<group>"; };
 		22EEACD02CDCEA7500959E5E /* NodeUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeUtils.cpp; sourceTree = "<group>"; };
@@ -7485,20 +7696,165 @@
 		228C4F012CEA273900C75501 /* NodeUtils */ = {
 			isa = PBXGroup;
 			children = (
-				228C4F1D2CEA2FDD00C75501 /* Layout2.h */,
-				228C4F192CEA2F9600C75501 /* Layout2.cpp */,
 				228C4EFC2CEA273900C75501 /* CCNodeUtil.h */,
-				228C4EFD2CEA273900C75501 /* FlexNode.h */,
-				228C4EFE2CEA273900C75501 /* FlexNode.cpp */,
-				228C4EFF2CEA273900C75501 /* LayoutLayer.h */,
-				228C4F002CEA273900C75501 /* LayoutLayer.cpp */,
+				228C501D2CEADD7000C75501 /* YogaNode.hpp */,
+				228C501E2CEADD7000C75501 /* YogaNode.cpp */,
 			);
 			path = NodeUtils;
+			sourceTree = "<group>";
+		};
+		228C4F422CEADA4E00C75501 /* algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				228C4F312CEADA4E00C75501 /* AbsoluteLayout.h */,
+				228C4F322CEADA4E00C75501 /* AbsoluteLayout.cpp */,
+				228C4F332CEADA4E00C75501 /* Align.h */,
+				228C4F342CEADA4E00C75501 /* Baseline.h */,
+				228C4F352CEADA4E00C75501 /* Baseline.cpp */,
+				228C4F362CEADA4E00C75501 /* BoundAxis.h */,
+				228C4F372CEADA4E00C75501 /* Cache.h */,
+				228C4F382CEADA4E00C75501 /* Cache.cpp */,
+				228C4F392CEADA4E00C75501 /* CalculateLayout.h */,
+				228C4F3A2CEADA4E00C75501 /* CalculateLayout.cpp */,
+				228C4F3B2CEADA4E00C75501 /* FlexDirection.h */,
+				228C4F3C2CEADA4E00C75501 /* FlexLine.h */,
+				228C4F3D2CEADA4E00C75501 /* FlexLine.cpp */,
+				228C4F3E2CEADA4E00C75501 /* PixelGrid.h */,
+				228C4F3F2CEADA4E00C75501 /* PixelGrid.cpp */,
+				228C4F402CEADA4E00C75501 /* SizingMode.h */,
+				228C4F412CEADA4E00C75501 /* TrailingPosition.h */,
+			);
+			path = algorithm;
+			sourceTree = "<group>";
+		};
+		228C4F452CEADA4E00C75501 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				228C4F432CEADA4E00C75501 /* Config.h */,
+				228C4F442CEADA4E00C75501 /* Config.cpp */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		228C4F4A2CEADA4E00C75501 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				228C4F462CEADA4E00C75501 /* AssertFatal.h */,
+				228C4F472CEADA4E00C75501 /* AssertFatal.cpp */,
+				228C4F482CEADA4E00C75501 /* Log.h */,
+				228C4F492CEADA4E00C75501 /* Log.cpp */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		228C4F5F2CEADA4E00C75501 /* enums */ = {
+			isa = PBXGroup;
+			children = (
+				228C4F4B2CEADA4E00C75501 /* Align.h */,
+				228C4F4C2CEADA4E00C75501 /* BoxSizing.h */,
+				228C4F4D2CEADA4E00C75501 /* Dimension.h */,
+				228C4F4E2CEADA4E00C75501 /* Direction.h */,
+				228C4F4F2CEADA4E00C75501 /* Display.h */,
+				228C4F502CEADA4E00C75501 /* Edge.h */,
+				228C4F512CEADA4E00C75501 /* Errata.h */,
+				228C4F522CEADA4E00C75501 /* ExperimentalFeature.h */,
+				228C4F532CEADA4E00C75501 /* FlexDirection.h */,
+				228C4F542CEADA4E00C75501 /* Gutter.h */,
+				228C4F552CEADA4E00C75501 /* Justify.h */,
+				228C4F562CEADA4E00C75501 /* LogLevel.h */,
+				228C4F572CEADA4E00C75501 /* MeasureMode.h */,
+				228C4F582CEADA4E00C75501 /* NodeType.h */,
+				228C4F592CEADA4E00C75501 /* Overflow.h */,
+				228C4F5A2CEADA4E00C75501 /* PhysicalEdge.h */,
+				228C4F5B2CEADA4E00C75501 /* PositionType.h */,
+				228C4F5C2CEADA4E00C75501 /* Unit.h */,
+				228C4F5D2CEADA4E00C75501 /* Wrap.h */,
+				228C4F5E2CEADA4E00C75501 /* YogaEnums.h */,
+			);
+			path = enums;
+			sourceTree = "<group>";
+		};
+		228C4F622CEADA4E00C75501 /* event */ = {
+			isa = PBXGroup;
+			children = (
+				228C4F602CEADA4E00C75501 /* event.h */,
+				228C4F612CEADA4E00C75501 /* event.cpp */,
+			);
+			path = event;
+			sourceTree = "<group>";
+		};
+		228C4F692CEADA4E00C75501 /* node */ = {
+			isa = PBXGroup;
+			children = (
+				228C4F632CEADA4E00C75501 /* CachedMeasurement.h */,
+				228C4F642CEADA4E00C75501 /* LayoutableChildren.h */,
+				228C4F652CEADA4E00C75501 /* LayoutResults.h */,
+				228C4F662CEADA4E00C75501 /* LayoutResults.cpp */,
+				228C4F672CEADA4E00C75501 /* Node.h */,
+				228C4F682CEADA4E00C75501 /* Node.cpp */,
+			);
+			path = node;
+			sourceTree = "<group>";
+		};
+		228C4F6C2CEADA4E00C75501 /* numeric */ = {
+			isa = PBXGroup;
+			children = (
+				228C4F6A2CEADA4E00C75501 /* Comparison.h */,
+				228C4F6B2CEADA4E00C75501 /* FloatOptional.h */,
+			);
+			path = numeric;
+			sourceTree = "<group>";
+		};
+		228C4F732CEADA4E00C75501 /* style */ = {
+			isa = PBXGroup;
+			children = (
+				228C4F6D2CEADA4E00C75501 /* SmallValueBuffer.h */,
+				228C4F6E2CEADA4E00C75501 /* Style.h */,
+				228C4F6F2CEADA4E00C75501 /* StyleLength.h */,
+				228C4F702CEADA4E00C75501 /* StyleSizeLength.h */,
+				228C4F712CEADA4E00C75501 /* StyleValueHandle.h */,
+				228C4F722CEADA4E00C75501 /* StyleValuePool.h */,
+			);
+			path = style;
+			sourceTree = "<group>";
+		};
+		228C4F862CEADA4E00C75501 /* yoga */ = {
+			isa = PBXGroup;
+			children = (
+				228C4F422CEADA4E00C75501 /* algorithm */,
+				228C4F452CEADA4E00C75501 /* config */,
+				228C4F4A2CEADA4E00C75501 /* debug */,
+				228C4F5F2CEADA4E00C75501 /* enums */,
+				228C4F622CEADA4E00C75501 /* event */,
+				228C4F692CEADA4E00C75501 /* node */,
+				228C4F6C2CEADA4E00C75501 /* numeric */,
+				228C4F732CEADA4E00C75501 /* style */,
+				228C4F742CEADA4E00C75501 /* CMakeLists.txt */,
+				228C4F752CEADA4E00C75501 /* module.modulemap */,
+				228C4F762CEADA4E00C75501 /* YGConfig.h */,
+				228C4F772CEADA4E00C75501 /* YGConfig.cpp */,
+				228C4F782CEADA4E00C75501 /* YGEnums.h */,
+				228C4F792CEADA4E00C75501 /* YGEnums.cpp */,
+				228C4F7A2CEADA4E00C75501 /* YGMacros.h */,
+				228C4F7B2CEADA4E00C75501 /* YGNode.h */,
+				228C4F7C2CEADA4E00C75501 /* YGNode.cpp */,
+				228C4F7D2CEADA4E00C75501 /* YGNodeLayout.h */,
+				228C4F7E2CEADA4E00C75501 /* YGNodeLayout.cpp */,
+				228C4F7F2CEADA4E00C75501 /* YGNodeStyle.h */,
+				228C4F802CEADA4E00C75501 /* YGNodeStyle.cpp */,
+				228C4F812CEADA4E00C75501 /* YGPixelGrid.h */,
+				228C4F822CEADA4E00C75501 /* YGPixelGrid.cpp */,
+				228C4F832CEADA4E00C75501 /* YGValue.h */,
+				228C4F842CEADA4E00C75501 /* YGValue.cpp */,
+				228C4F852CEADA4E00C75501 /* Yoga.h */,
+			);
+			path = yoga;
 			sourceTree = "<group>";
 		};
 		22EEABA52CDCAAD500959E5E /* c_extenstions */ = {
 			isa = PBXGroup;
 			children = (
+				228C4F862CEADA4E00C75501 /* yoga */,
 				228C4F012CEA273900C75501 /* NodeUtils */,
 				22EEACD72CDCEB0100959E5E /* NodeUtils.h */,
 				22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */,
@@ -9526,6 +9882,7 @@
 				B665E43C1AA80A6600DDB1C5 /* CCPUVortexAffectorTranslator.h in Headers */,
 				15AE191C19AAD35000C27E9E /* CCTransformHelp.h in Headers */,
 				5034CA2F191D591100CE6051 /* ccShader_PositionTexture.vert in Headers */,
+				228C501F2CEADD7000C75501 /* YogaNode.hpp in Headers */,
 				29DA08F71C63351600F4052B /* UIEditBoxImpl-winrt.h in Headers */,
 				B665E4241AA80A6600DDB1C5 /* CCPUTranslateManager.h in Headers */,
 				468A14F81EF223B700ECA675 /* idl.h in Headers */,
@@ -9533,6 +9890,62 @@
 				1A40D15D1E8E56C7002E363A /* pointer.h in Headers */,
 				B665E3381AA80A6500DDB1C5 /* CCPUOnEmissionObserverTranslator.h in Headers */,
 				50ABBE951925AB6F00A911A9 /* CCProfiling.h in Headers */,
+				228C4FD22CEADA4E00C75501 /* BoxSizing.h in Headers */,
+				228C4FD32CEADA4E00C75501 /* Cache.h in Headers */,
+				228C4FD42CEADA4E00C75501 /* FloatOptional.h in Headers */,
+				228C4FD52CEADA4E00C75501 /* Wrap.h in Headers */,
+				228C4FD62CEADA4E00C75501 /* Errata.h in Headers */,
+				228C4FD72CEADA4E00C75501 /* SmallValueBuffer.h in Headers */,
+				228C4FD82CEADA4E00C75501 /* Justify.h in Headers */,
+				228C4FD92CEADA4E00C75501 /* Direction.h in Headers */,
+				228C4FDA2CEADA4E00C75501 /* StyleLength.h in Headers */,
+				228C4FDB2CEADA4E00C75501 /* MeasureMode.h in Headers */,
+				228C4FDC2CEADA4E00C75501 /* Node.h in Headers */,
+				228C4FDD2CEADA4E00C75501 /* StyleValueHandle.h in Headers */,
+				228C4FDE2CEADA4E00C75501 /* YogaEnums.h in Headers */,
+				228C4FDF2CEADA4E00C75501 /* NodeType.h in Headers */,
+				228C4FE02CEADA4E00C75501 /* Log.h in Headers */,
+				228C4FE12CEADA4E00C75501 /* LayoutableChildren.h in Headers */,
+				228C4FE22CEADA4E00C75501 /* event.h in Headers */,
+				228C4FE32CEADA4E00C75501 /* StyleSizeLength.h in Headers */,
+				228C4FE42CEADA4E00C75501 /* Comparison.h in Headers */,
+				228C4FE52CEADA4E00C75501 /* TrailingPosition.h in Headers */,
+				228C4FE62CEADA4E00C75501 /* StyleValuePool.h in Headers */,
+				228C4FE72CEADA4E00C75501 /* Dimension.h in Headers */,
+				228C4FE82CEADA4E00C75501 /* PositionType.h in Headers */,
+				228C4FE92CEADA4E00C75501 /* LayoutResults.h in Headers */,
+				228C4FEA2CEADA4E00C75501 /* Overflow.h in Headers */,
+				228C4FEB2CEADA4E00C75501 /* ExperimentalFeature.h in Headers */,
+				228C4FEC2CEADA4E00C75501 /* AbsoluteLayout.h in Headers */,
+				228C4FED2CEADA4E00C75501 /* CachedMeasurement.h in Headers */,
+				228C4FEE2CEADA4E00C75501 /* FlexLine.h in Headers */,
+				228C4FEF2CEADA4E00C75501 /* Display.h in Headers */,
+				228C4FF02CEADA4E00C75501 /* Style.h in Headers */,
+				228C4FF12CEADA4E00C75501 /* PixelGrid.h in Headers */,
+				228C4FF22CEADA4E00C75501 /* LogLevel.h in Headers */,
+				228C4FF32CEADA4E00C75501 /* Align.h in Headers */,
+				228C4FF42CEADA4E00C75501 /* YGNodeStyle.h in Headers */,
+				228C4FF52CEADA4E00C75501 /* Gutter.h in Headers */,
+				228C4FF62CEADA4E00C75501 /* Align.h in Headers */,
+				228C4FF72CEADA4E00C75501 /* YGValue.h in Headers */,
+				228C4FF82CEADA4E00C75501 /* BoundAxis.h in Headers */,
+				228C4FF92CEADA4E00C75501 /* YGPixelGrid.h in Headers */,
+				228C4FFA2CEADA4E00C75501 /* Yoga.h in Headers */,
+				228C4FFB2CEADA4E00C75501 /* YGNodeLayout.h in Headers */,
+				228C4FFC2CEADA4E00C75501 /* YGMacros.h in Headers */,
+				228C4FFD2CEADA4E00C75501 /* YGConfig.h in Headers */,
+				228C4FFE2CEADA4E00C75501 /* FlexDirection.h in Headers */,
+				228C4FFF2CEADA4E00C75501 /* YGNode.h in Headers */,
+				228C50002CEADA4E00C75501 /* Config.h in Headers */,
+				228C50012CEADA4E00C75501 /* SizingMode.h in Headers */,
+				228C50022CEADA4E00C75501 /* AssertFatal.h in Headers */,
+				228C50032CEADA4E00C75501 /* YGEnums.h in Headers */,
+				228C50042CEADA4E00C75501 /* CalculateLayout.h in Headers */,
+				228C50052CEADA4E00C75501 /* Unit.h in Headers */,
+				228C50062CEADA4E00C75501 /* FlexDirection.h in Headers */,
+				228C50072CEADA4E00C75501 /* PhysicalEdge.h in Headers */,
+				228C50082CEADA4E00C75501 /* Baseline.h in Headers */,
+				228C50092CEADA4E00C75501 /* Edge.h in Headers */,
 				B665E2301AA80A6500DDB1C5 /* CCPUBoxColliderTranslator.h in Headers */,
 				5034CA4B191D591100CE6051 /* ccShader_Label_df_glow.frag in Headers */,
 				50ABBE4F1925AB6F00A911A9 /* CCEventCustom.h in Headers */,
@@ -9803,9 +10216,7 @@
 				1A01C69218F57BE800EFE3A6 /* CCDouble.h in Headers */,
 				15AE18F919AAD35000C27E9E /* CCBone.h in Headers */,
 				50ABBE251925AB6F00A911A9 /* base64.h in Headers */,
-				228C4F072CEA273900C75501 /* LayoutLayer.h in Headers */,
 				228C4F082CEA273900C75501 /* CCNodeUtil.h in Headers */,
-				228C4F092CEA273900C75501 /* FlexNode.h in Headers */,
 				15AE1B9C19AADFDF00C27E9E /* UIRelativeBox.h in Headers */,
 				B665E3341AA80A6500DDB1C5 /* CCPUOnEmissionObserver.h in Headers */,
 				A05DCF9E1B90584E00EE040B /* CCDownloader-curl.h in Headers */,
@@ -9960,7 +10371,6 @@
 				5020A1B31D49912500E80C72 /* IkConstraintData.h in Headers */,
 				50ABC0091926664800A911A9 /* CCCommon.h in Headers */,
 				50ABBE531925AB6F00A911A9 /* CCEventDispatcher.h in Headers */,
-				228C4F202CEA2FDD00C75501 /* Layout2.h in Headers */,
 				50864C941C7BC1B000B3BAB1 /* chipmunk_types.h in Headers */,
 				464AD6E7197EBB1400E502D8 /* pvr.h in Headers */,
 			);
@@ -10105,6 +10515,7 @@
 				507B3DB61C31BDD30067B53E /* CCEventCustom.h in Headers */,
 				507B3DB81C31BDD30067B53E /* CCPUOnCountObserverTranslator.h in Headers */,
 				507B3DB91C31BDD30067B53E /* CCDownloader-apple.h in Headers */,
+				228C50232CEADD7000C75501 /* YogaNode.hpp in Headers */,
 				507B3DBA1C31BDD30067B53E /* CCFrameBuffer.h in Headers */,
 				507B3DBC1C31BDD30067B53E /* CCPUAlignAffectorTranslator.h in Headers */,
 				507B3DBD1C31BDD30067B53E /* CCActionEase.h in Headers */,
@@ -10157,7 +10568,6 @@
 				507B3DF11C31BDD30067B53E /* CocosGUI.h in Headers */,
 				507B3DF21C31BDD30067B53E /* CCActionProgressTimer.h in Headers */,
 				507B3DF41C31BDD30067B53E /* CCPUBehaviour.h in Headers */,
-				228C4F1E2CEA2FDD00C75501 /* Layout2.h in Headers */,
 				507B3DF51C31BDD30067B53E /* CCActionTiledGrid.h in Headers */,
 				507B3DF61C31BDD30067B53E /* CCPUEventHandlerTranslator.h in Headers */,
 				507B3DF81C31BDD30067B53E /* ioapi_mem.h in Headers */,
@@ -10538,9 +10948,7 @@
 				507B3FCD1C31BDD30067B53E /* utlist.h in Headers */,
 				507B3FCE1C31BDD30067B53E /* unzip.h in Headers */,
 				507B3FD11C31BDD30067B53E /* UIHBox.h in Headers */,
-				228C4F022CEA273900C75501 /* LayoutLayer.h in Headers */,
 				228C4F032CEA273900C75501 /* CCNodeUtil.h in Headers */,
-				228C4F042CEA273900C75501 /* FlexNode.h in Headers */,
 				507B3FD31C31BDD30067B53E /* CCProperties.h in Headers */,
 				507B3FD51C31BDD30067B53E /* ccShader_Label_normal.frag in Headers */,
 				507B3FD91C31BDD30067B53E /* CCSkeleton3D.h in Headers */,
@@ -11007,7 +11415,6 @@
 				50ABBE881925AB6F00A911A9 /* ccMacros.h in Headers */,
 				B665E3991AA80A6500DDB1C5 /* CCPUPointEmitter.h in Headers */,
 				50ABC0101926664800A911A9 /* CCFileUtils.h in Headers */,
-				228C4F1F2CEA2FDD00C75501 /* Layout2.h in Headers */,
 				15AE19A919AAD39700C27E9E /* LayoutReader.h in Headers */,
 				B665E29D1AA80A6500DDB1C5 /* CCPUEmitterTranslator.h in Headers */,
 				15AE1B7B19AADA9A00C27E9E /* UIScrollView.h in Headers */,
@@ -11035,9 +11442,7 @@
 				50ABBD5B1925AB0000A911A9 /* Vec2.h in Headers */,
 				43015DC21B60DF4000E75161 /* CCComExtensionData.h in Headers */,
 				D0FD035E1A3B51AA00825BB5 /* CCAllocatorStrategyGlobalSmallBlock.h in Headers */,
-				228C4F0E2CEA273900C75501 /* LayoutLayer.h in Headers */,
 				228C4F0F2CEA273900C75501 /* CCNodeUtil.h in Headers */,
-				228C4F102CEA273900C75501 /* FlexNode.h in Headers */,
 				50ABBD411925AB0000A911A9 /* CCMath.h in Headers */,
 				1A5701A0180BCB590088DEC7 /* CCFont.h in Headers */,
 				5020A1D21D49912500E80C72 /* PathConstraintData.h in Headers */,
@@ -11321,6 +11726,62 @@
 				B6CAAFFD1AF9A9E100B9B856 /* CCPhysics3DWorld.h in Headers */,
 				501216971AC47393009A4BEA /* CCPass.h in Headers */,
 				1A57030F180BCF190088DEC7 /* CCComponent.h in Headers */,
+				228C4F872CEADA4E00C75501 /* BoxSizing.h in Headers */,
+				228C4F882CEADA4E00C75501 /* Cache.h in Headers */,
+				228C4F892CEADA4E00C75501 /* FloatOptional.h in Headers */,
+				228C4F8A2CEADA4E00C75501 /* Wrap.h in Headers */,
+				228C4F8B2CEADA4E00C75501 /* Errata.h in Headers */,
+				228C4F8C2CEADA4E00C75501 /* SmallValueBuffer.h in Headers */,
+				228C4F8D2CEADA4E00C75501 /* Justify.h in Headers */,
+				228C4F8E2CEADA4E00C75501 /* Direction.h in Headers */,
+				228C4F8F2CEADA4E00C75501 /* StyleLength.h in Headers */,
+				228C4F902CEADA4E00C75501 /* MeasureMode.h in Headers */,
+				228C4F912CEADA4E00C75501 /* Node.h in Headers */,
+				228C4F922CEADA4E00C75501 /* StyleValueHandle.h in Headers */,
+				228C4F932CEADA4E00C75501 /* YogaEnums.h in Headers */,
+				228C4F942CEADA4E00C75501 /* NodeType.h in Headers */,
+				228C4F952CEADA4E00C75501 /* Log.h in Headers */,
+				228C4F962CEADA4E00C75501 /* LayoutableChildren.h in Headers */,
+				228C4F972CEADA4E00C75501 /* event.h in Headers */,
+				228C4F982CEADA4E00C75501 /* StyleSizeLength.h in Headers */,
+				228C4F992CEADA4E00C75501 /* Comparison.h in Headers */,
+				228C4F9A2CEADA4E00C75501 /* TrailingPosition.h in Headers */,
+				228C4F9B2CEADA4E00C75501 /* StyleValuePool.h in Headers */,
+				228C4F9C2CEADA4E00C75501 /* Dimension.h in Headers */,
+				228C4F9D2CEADA4E00C75501 /* PositionType.h in Headers */,
+				228C4F9E2CEADA4E00C75501 /* LayoutResults.h in Headers */,
+				228C4F9F2CEADA4E00C75501 /* Overflow.h in Headers */,
+				228C4FA02CEADA4E00C75501 /* ExperimentalFeature.h in Headers */,
+				228C4FA12CEADA4E00C75501 /* AbsoluteLayout.h in Headers */,
+				228C4FA22CEADA4E00C75501 /* CachedMeasurement.h in Headers */,
+				228C4FA32CEADA4E00C75501 /* FlexLine.h in Headers */,
+				228C4FA42CEADA4E00C75501 /* Display.h in Headers */,
+				228C4FA52CEADA4E00C75501 /* Style.h in Headers */,
+				228C4FA62CEADA4E00C75501 /* PixelGrid.h in Headers */,
+				228C4FA72CEADA4E00C75501 /* LogLevel.h in Headers */,
+				228C4FA82CEADA4E00C75501 /* Align.h in Headers */,
+				228C4FA92CEADA4E00C75501 /* YGNodeStyle.h in Headers */,
+				228C4FAA2CEADA4E00C75501 /* Gutter.h in Headers */,
+				228C4FAB2CEADA4E00C75501 /* Align.h in Headers */,
+				228C4FAC2CEADA4E00C75501 /* YGValue.h in Headers */,
+				228C4FAD2CEADA4E00C75501 /* BoundAxis.h in Headers */,
+				228C4FAE2CEADA4E00C75501 /* YGPixelGrid.h in Headers */,
+				228C4FAF2CEADA4E00C75501 /* Yoga.h in Headers */,
+				228C4FB02CEADA4E00C75501 /* YGNodeLayout.h in Headers */,
+				228C4FB12CEADA4E00C75501 /* YGMacros.h in Headers */,
+				228C4FB22CEADA4E00C75501 /* YGConfig.h in Headers */,
+				228C4FB32CEADA4E00C75501 /* FlexDirection.h in Headers */,
+				228C4FB42CEADA4E00C75501 /* YGNode.h in Headers */,
+				228C4FB52CEADA4E00C75501 /* Config.h in Headers */,
+				228C4FB62CEADA4E00C75501 /* SizingMode.h in Headers */,
+				228C4FB72CEADA4E00C75501 /* AssertFatal.h in Headers */,
+				228C4FB82CEADA4E00C75501 /* YGEnums.h in Headers */,
+				228C4FB92CEADA4E00C75501 /* CalculateLayout.h in Headers */,
+				228C4FBA2CEADA4E00C75501 /* Unit.h in Headers */,
+				228C4FBB2CEADA4E00C75501 /* FlexDirection.h in Headers */,
+				228C4FBC2CEADA4E00C75501 /* PhysicalEdge.h in Headers */,
+				228C4FBD2CEADA4E00C75501 /* Baseline.h in Headers */,
+				228C4FBE2CEADA4E00C75501 /* Edge.h in Headers */,
 				B665E22D1AA80A6500DDB1C5 /* CCPUBoxCollider.h in Headers */,
 				85505F071B60E3BA003F2CD4 /* CCSkeletonNode.h in Headers */,
 				15AE18B019AAD33D00C27E9E /* CCBKeyframe.h in Headers */,
@@ -11599,6 +12060,7 @@
 				4D76BE3D1A4AAF0A00102962 /* CCActionTimelineNode.h in Headers */,
 				50ABBEB21925AB6F00A911A9 /* CCUserDefault.h in Headers */,
 				15AE198B19AAD36A00C27E9E /* ButtonReader.h in Headers */,
+				228C50212CEADD7000C75501 /* YogaNode.hpp in Headers */,
 				A0534A6B1B87306E006B03E5 /* CCIDownloaderImpl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -11691,7 +12153,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				228C4F1A2CEA2F9600C75501 /* Layout2.cpp in Sources */,
 				50ABBE2B1925AB6F00A911A9 /* ccCArray.cpp in Sources */,
 				B6CAAFEA1AF9A9E100B9B856 /* CCPhysics3DConstraint.cpp in Sources */,
 				15AE1BDE19AAE01E00C27E9E /* CCInvocation.cpp in Sources */,
@@ -11850,6 +12311,7 @@
 				B665E2961AA80A6500DDB1C5 /* CCPUEmitterManager.cpp in Sources */,
 				1A570091180BC5A10088DEC7 /* CCActionTween.cpp in Sources */,
 				15AE188419AAD33D00C27E9E /* CCBSequence.cpp in Sources */,
+				228C50202CEADD7000C75501 /* YogaNode.cpp in Sources */,
 				50ABBEBF1925AB6F00A911A9 /* CCValue.cpp in Sources */,
 				1A570098180BC5C10088DEC7 /* CCAtlasNode.cpp in Sources */,
 				1A57009E180BC5D20088DEC7 /* CCNode.cpp in Sources */,
@@ -12073,8 +12535,6 @@
 				A05DCF9D1B90584E00EE040B /* CCDownloader-curl.cpp in Sources */,
 				50ABC0111926664800A911A9 /* CCGLView.cpp in Sources */,
 				50ABBE3D1925AB6F00A911A9 /* CCDataVisitor.cpp in Sources */,
-				228C4F0A2CEA273900C75501 /* FlexNode.cpp in Sources */,
-				228C4F0B2CEA273900C75501 /* LayoutLayer.cpp in Sources */,
 				382384071A25900F002C4610 /* FlatBuffersSerialize.cpp in Sources */,
 				5070031D1B69735200E83DDD /* HttpClient-winrt.cpp in Sources */,
 				5020A1501D49912500E80C72 /* Animation.c in Sources */,
@@ -12341,6 +12801,25 @@
 				15AE1BB719AADFEF00C27E9E /* WebSocket.cpp in Sources */,
 				5020A20A1D49912500E80C72 /* Slot.c in Sources */,
 				B665E20A1AA80A6500DDB1C5 /* CCPUBaseColliderTranslator.cpp in Sources */,
+				228C500A2CEADA4E00C75501 /* Log.cpp in Sources */,
+				228C500B2CEADA4E00C75501 /* YGPixelGrid.cpp in Sources */,
+				228C500C2CEADA4E00C75501 /* YGNodeLayout.cpp in Sources */,
+				228C500D2CEADA4E00C75501 /* LayoutResults.cpp in Sources */,
+				228C500E2CEADA4E00C75501 /* PixelGrid.cpp in Sources */,
+				228C500F2CEADA4E00C75501 /* YGNode.cpp in Sources */,
+				228C50102CEADA4E00C75501 /* YGValue.cpp in Sources */,
+				228C50112CEADA4E00C75501 /* Baseline.cpp in Sources */,
+				228C50122CEADA4E00C75501 /* YGNodeStyle.cpp in Sources */,
+				228C50132CEADA4E00C75501 /* AssertFatal.cpp in Sources */,
+				228C50142CEADA4E00C75501 /* AbsoluteLayout.cpp in Sources */,
+				228C50152CEADA4E00C75501 /* event.cpp in Sources */,
+				228C50162CEADA4E00C75501 /* FlexLine.cpp in Sources */,
+				228C50172CEADA4E00C75501 /* Node.cpp in Sources */,
+				228C50182CEADA4E00C75501 /* YGEnums.cpp in Sources */,
+				228C50192CEADA4E00C75501 /* CalculateLayout.cpp in Sources */,
+				228C501A2CEADA4E00C75501 /* YGConfig.cpp in Sources */,
+				228C501B2CEADA4E00C75501 /* Config.cpp in Sources */,
+				228C501C2CEADA4E00C75501 /* Cache.cpp in Sources */,
 				B665E3E61AA80A6600DDB1C5 /* CCPUSineForceAffectorTranslator.cpp in Sources */,
 				15AE1B5119AADA9900C27E9E /* UIPageView.cpp in Sources */,
 				15AE18EC19AAD35000C27E9E /* CCActionObject.cpp in Sources */,
@@ -12467,6 +12946,7 @@
 				507B3A3D1C31BDD30067B53E /* CCParticle3DRender.cpp in Sources */,
 				507B3A3E1C31BDD30067B53E /* CCClippingRectangleNode.cpp in Sources */,
 				507B3A3F1C31BDD30067B53E /* CCPULinearForceAffector.cpp in Sources */,
+				228C50242CEADD7000C75501 /* YogaNode.cpp in Sources */,
 				507B3A401C31BDD30067B53E /* CCControlPotentiometer.cpp in Sources */,
 				507B3A421C31BDD30067B53E /* CCPUDynamicAttributeTranslator.cpp in Sources */,
 				507B3A431C31BDD30067B53E /* CCPUOnClearObserver.cpp in Sources */,
@@ -12708,7 +13188,6 @@
 				507B3B741C31BDD30067B53E /* DebugDraw.cpp in Sources */,
 				507B3B751C31BDD30067B53E /* CCPUEventHandlerManager.cpp in Sources */,
 				507B3B771C31BDD30067B53E /* CCBone.cpp in Sources */,
-				228C4F1C2CEA2F9600C75501 /* Layout2.cpp in Sources */,
 				507B3B781C31BDD30067B53E /* CCRenderTexture.cpp in Sources */,
 				507B3B7A1C31BDD30067B53E /* CCParticleBatchNode.cpp in Sources */,
 				507B3B7B1C31BDD30067B53E /* UIEditBoxImpl-stub.cpp in Sources */,
@@ -12844,8 +13323,6 @@
 				507B3C1B1C31BDD30067B53E /* CCDisplayFactory.cpp in Sources */,
 				507B3C1C1C31BDD30067B53E /* Sprite3DReader.cpp in Sources */,
 				507B3C1D1C31BDD30067B53E /* CCThread-apple.mm in Sources */,
-				228C4F052CEA273900C75501 /* FlexNode.cpp in Sources */,
-				228C4F062CEA273900C75501 /* LayoutLayer.cpp in Sources */,
 				507B3C1E1C31BDD30067B53E /* UIAbstractCheckButton.cpp in Sources */,
 				507B3C201C31BDD30067B53E /* CCUserDefault-android.cpp in Sources */,
 				507B3C221C31BDD30067B53E /* tinyxml2.cpp in Sources */,
@@ -13254,6 +13731,25 @@
 				B665E3F31AA80A6600DDB1C5 /* CCPUSlaveEmitter.cpp in Sources */,
 				46BDE4D61FA87CB700104C05 /* Triangulator.c in Sources */,
 				1A570113180BC8EE0088DEC7 /* CCDrawNode.cpp in Sources */,
+				228C4FBF2CEADA4E00C75501 /* Log.cpp in Sources */,
+				228C4FC02CEADA4E00C75501 /* YGPixelGrid.cpp in Sources */,
+				228C4FC12CEADA4E00C75501 /* YGNodeLayout.cpp in Sources */,
+				228C4FC22CEADA4E00C75501 /* LayoutResults.cpp in Sources */,
+				228C4FC32CEADA4E00C75501 /* PixelGrid.cpp in Sources */,
+				228C4FC42CEADA4E00C75501 /* YGNode.cpp in Sources */,
+				228C4FC52CEADA4E00C75501 /* YGValue.cpp in Sources */,
+				228C4FC62CEADA4E00C75501 /* Baseline.cpp in Sources */,
+				228C4FC72CEADA4E00C75501 /* YGNodeStyle.cpp in Sources */,
+				228C4FC82CEADA4E00C75501 /* AssertFatal.cpp in Sources */,
+				228C4FC92CEADA4E00C75501 /* AbsoluteLayout.cpp in Sources */,
+				228C4FCA2CEADA4E00C75501 /* event.cpp in Sources */,
+				228C4FCB2CEADA4E00C75501 /* FlexLine.cpp in Sources */,
+				228C4FCC2CEADA4E00C75501 /* Node.cpp in Sources */,
+				228C4FCD2CEADA4E00C75501 /* YGEnums.cpp in Sources */,
+				228C4FCE2CEADA4E00C75501 /* CalculateLayout.cpp in Sources */,
+				228C4FCF2CEADA4E00C75501 /* YGConfig.cpp in Sources */,
+				228C4FD02CEADA4E00C75501 /* Config.cpp in Sources */,
+				228C4FD12CEADA4E00C75501 /* Cache.cpp in Sources */,
 				1A57011C180BC90D0088DEC7 /* CCGrabber.cpp in Sources */,
 				382384301A259112002C4610 /* ParticleReader.cpp in Sources */,
 				1A570120180BC90D0088DEC7 /* CCGrid.cpp in Sources */,
@@ -13269,6 +13765,7 @@
 				B677B0D61B18492D006762CB /* CCNavMeshObstacle.cpp in Sources */,
 				43015DC01B60DF4000E75161 /* CCComExtensionData.cpp in Sources */,
 				1A5701A2180BCB590088DEC7 /* CCFontAtlas.cpp in Sources */,
+				228C50222CEADD7000C75501 /* YogaNode.cpp in Sources */,
 				3E61781D1966A5A300DE83F5 /* CCController.cpp in Sources */,
 				50ABC00E1926664800A911A9 /* CCFileUtils.cpp in Sources */,
 				299CF1FC19A434BC00C378C1 /* ccRandom.cpp in Sources */,
@@ -13383,7 +13880,6 @@
 				15AE19B419AAD39700C27E9E /* TextAtlasReader.cpp in Sources */,
 				B6DD2FA81B04825B00E47F5F /* DebugDraw.cpp in Sources */,
 				B665E2A31AA80A6500DDB1C5 /* CCPUEventHandlerManager.cpp in Sources */,
-				228C4F1B2CEA2F9600C75501 /* Layout2.cpp in Sources */,
 				15AE194019AAD35100C27E9E /* CCBone.cpp in Sources */,
 				1A570215180BCBF40088DEC7 /* CCRenderTexture.cpp in Sources */,
 				1A570222180BCC1A0088DEC7 /* CCParticleBatchNode.cpp in Sources */,
@@ -13519,8 +14015,6 @@
 				50ABBE2C1925AB6F00A911A9 /* ccCArray.cpp in Sources */,
 				15AE193219AAD35100C27E9E /* CCActionNode.cpp in Sources */,
 				15AE195319AAD35100C27E9E /* CCDisplayFactory.cpp in Sources */,
-				228C4F0C2CEA273900C75501 /* FlexNode.cpp in Sources */,
-				228C4F0D2CEA273900C75501 /* LayoutLayer.cpp in Sources */,
 				182C5CD71A98F30500C30D34 /* Sprite3DReader.cpp in Sources */,
 				50ABC0061926664800A911A9 /* CCThread-apple.mm in Sources */,
 				B5CE6DBF1B3BF2B1002B0419 /* UIAbstractCheckButton.cpp in Sources */,
@@ -13854,6 +14348,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXCLUDED_ARCHS = "";
@@ -13906,6 +14401,8 @@
 					"$(SRCROOT)/../external/bullet/include",
 					"$(SRCROOT)/../external/bullet/include/bullet",
 					"$(SRCROOT)/../external/uv/include",
+					"\"$(SRCROOT)/../c_extenstions\"",
+					"\"$(SRCROOT)/../c_extenstions/yoga\"",
 				);
 			};
 			name = Debug;
@@ -13915,6 +14412,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXCLUDED_ARCHS = "";
@@ -13967,6 +14465,8 @@
 					"$(SRCROOT)/../external/bullet/include",
 					"$(SRCROOT)/../external/bullet/include/bullet",
 					"$(SRCROOT)/../external/uv/include",
+					"\"$(SRCROOT)/../c_extenstions\"",
+					"\"$(SRCROOT)/../c_extenstions/yoga\"",
 				);
 			};
 			name = Release;
