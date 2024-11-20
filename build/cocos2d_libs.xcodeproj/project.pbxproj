@@ -1271,11 +1271,11 @@
 		228C501A2CEADA4E00C75501 /* YGConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F772CEADA4E00C75501 /* YGConfig.cpp */; };
 		228C501B2CEADA4E00C75501 /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F442CEADA4E00C75501 /* Config.cpp */; };
 		228C501C2CEADA4E00C75501 /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C4F382CEADA4E00C75501 /* Cache.cpp */; };
-		228C501F2CEADD7000C75501 /* YogaNode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 228C501D2CEADD7000C75501 /* YogaNode.hpp */; };
+		228C501F2CEADD7000C75501 /* CCYFlexLayout.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 228C501D2CEADD7000C75501 /* CCYFlexLayout.hpp */; };
 		228C50202CEADD7000C75501 /* YogaNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C501E2CEADD7000C75501 /* YogaNode.cpp */; };
-		228C50212CEADD7000C75501 /* YogaNode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 228C501D2CEADD7000C75501 /* YogaNode.hpp */; };
+		228C50212CEADD7000C75501 /* CCYFlexLayout.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 228C501D2CEADD7000C75501 /* CCYFlexLayout.hpp */; };
 		228C50222CEADD7000C75501 /* YogaNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C501E2CEADD7000C75501 /* YogaNode.cpp */; };
-		228C50232CEADD7000C75501 /* YogaNode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 228C501D2CEADD7000C75501 /* YogaNode.hpp */; };
+		228C50232CEADD7000C75501 /* CCYFlexLayout.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 228C501D2CEADD7000C75501 /* CCYFlexLayout.hpp */; };
 		228C50242CEADD7000C75501 /* YogaNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 228C501E2CEADD7000C75501 /* YogaNode.cpp */; };
 		22EEABA72CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
 		22EEABA92CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
@@ -5142,7 +5142,7 @@
 		228C4F832CEADA4E00C75501 /* YGValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGValue.h; sourceTree = "<group>"; };
 		228C4F842CEADA4E00C75501 /* YGValue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YGValue.cpp; sourceTree = "<group>"; };
 		228C4F852CEADA4E00C75501 /* Yoga.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Yoga.h; sourceTree = "<group>"; };
-		228C501D2CEADD7000C75501 /* YogaNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = YogaNode.hpp; sourceTree = "<group>"; };
+		228C501D2CEADD7000C75501 /* CCYFlexLayout.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CCYFlexLayout.hpp; sourceTree = "<group>"; };
 		228C501E2CEADD7000C75501 /* YogaNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = YogaNode.cpp; sourceTree = "<group>"; };
 		22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MenuItemImageExtension.cpp; sourceTree = "<group>"; };
 		22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuItemImageExtension.h; sourceTree = "<group>"; };
@@ -7697,7 +7697,7 @@
 			isa = PBXGroup;
 			children = (
 				228C4EFC2CEA273900C75501 /* CCNodeUtil.h */,
-				228C501D2CEADD7000C75501 /* YogaNode.hpp */,
+				228C501D2CEADD7000C75501 /* CCYFlexLayout.hpp */,
 				228C501E2CEADD7000C75501 /* YogaNode.cpp */,
 			);
 			path = NodeUtils;
@@ -9882,7 +9882,7 @@
 				B665E43C1AA80A6600DDB1C5 /* CCPUVortexAffectorTranslator.h in Headers */,
 				15AE191C19AAD35000C27E9E /* CCTransformHelp.h in Headers */,
 				5034CA2F191D591100CE6051 /* ccShader_PositionTexture.vert in Headers */,
-				228C501F2CEADD7000C75501 /* YogaNode.hpp in Headers */,
+				228C501F2CEADD7000C75501 /* CCYFlexLayout.hpp in Headers */,
 				29DA08F71C63351600F4052B /* UIEditBoxImpl-winrt.h in Headers */,
 				B665E4241AA80A6600DDB1C5 /* CCPUTranslateManager.h in Headers */,
 				468A14F81EF223B700ECA675 /* idl.h in Headers */,
@@ -10515,7 +10515,7 @@
 				507B3DB61C31BDD30067B53E /* CCEventCustom.h in Headers */,
 				507B3DB81C31BDD30067B53E /* CCPUOnCountObserverTranslator.h in Headers */,
 				507B3DB91C31BDD30067B53E /* CCDownloader-apple.h in Headers */,
-				228C50232CEADD7000C75501 /* YogaNode.hpp in Headers */,
+				228C50232CEADD7000C75501 /* CCYFlexLayout.hpp in Headers */,
 				507B3DBA1C31BDD30067B53E /* CCFrameBuffer.h in Headers */,
 				507B3DBC1C31BDD30067B53E /* CCPUAlignAffectorTranslator.h in Headers */,
 				507B3DBD1C31BDD30067B53E /* CCActionEase.h in Headers */,
@@ -12060,7 +12060,7 @@
 				4D76BE3D1A4AAF0A00102962 /* CCActionTimelineNode.h in Headers */,
 				50ABBEB21925AB6F00A911A9 /* CCUserDefault.h in Headers */,
 				15AE198B19AAD36A00C27E9E /* ButtonReader.h in Headers */,
-				228C50212CEADD7000C75501 /* YogaNode.hpp in Headers */,
+				228C50212CEADD7000C75501 /* CCYFlexLayout.hpp in Headers */,
 				A0534A6B1B87306E006B03E5 /* CCIDownloaderImpl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
