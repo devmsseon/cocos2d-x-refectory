@@ -170,11 +170,15 @@ public:
        
         for (uint32_t i = 0; i < YGNodeGetChildCount(_yogaNode); i++) {
             auto yogaObj = yogaNodes[i];
-            yogaObj->doLayout();
+            
+            if (yogaObj->yogaNodes.size() > 0){
+                yogaObj->doLayout();
+            }
+        
         }
      
-
-        YGNodeCalculateLayout(_yogaNode, YGUndefined, YGUndefined,YGDirectionLTR);
+    
+        YGNodeCalculateLayout(_yogaNode, YGUndefined, YGUndefined,YGNodeStyleGetDirection(_yogaNode));
         
   
         float maxChildWidth = 0.0f;
