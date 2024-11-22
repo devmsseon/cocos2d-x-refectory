@@ -237,7 +237,7 @@ public:
               
                 maxChildWidth = std::max(maxChildWidth, childXEndPoint);
                 maxChildHeight = std::max(maxChildHeight, childYEndPoint);
-                
+                /*
                 cocos2d::log("\n");
                 cocos2d::log("posX : %f", posX);
                 cocos2d::log("posY : %f", posY);
@@ -250,7 +250,7 @@ public:
                 
                 cocos2d::log("mRealWdith : %f", mRealWdith);
                 cocos2d::log("\n");
-                
+                */
                 //yogaObj->doLayout();
                 auto cocosNode = yogaObj->_node;
                 if (cocosNode != nullptr){

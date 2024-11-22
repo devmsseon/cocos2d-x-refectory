@@ -26,10 +26,16 @@ private:
    // std::vector<FlexNode*> _children;   // 자식 FlexNode들
     std::vector<std::shared_ptr<FlexNode>> _children;
 public:
+    bool isSizeFitMode = false;
+    
     FlexContainer() {
         auto tNode = cocos2d::Node::create();
-        tNode->setAnchorPoint(cocos2d::Vec2(0, 0));
+        tNode->setAnchorPoint(cocos2d::Vec2(0,0));
         _rootNode = std::make_shared<FlexNode>(tNode);
+        _rootNode->isTotalRootNode = true;
+    }
+    void setLimitWidth(float width) {
+        _rootNode->setLimitWidth(width);
     }
     
     void setWidth(float width) {
@@ -73,6 +79,11 @@ public:
         return *this;
     }
     
+    FlexContainer& setJustifyContent(YGJustify justify) {
+        _rootNode->setJustifyContent(justify);
+        return *this;
+    }
+    
     FlexContainer& setFlexDirection(YGFlexDirection direction = YGFlexDirectionColumn) {
         _rootNode->setFlexDirection(direction);
         return *this;
@@ -105,9 +116,49 @@ public:
         return _rootNode->getContentHeight();
     }
     
-    void layout(float width, float height) {
+    void layoutDrawForMain(float width = YGUndefined, float height = YGUndefined , FlexNode* refFlexNode = nullptr) {
+        _rootNode->layoutDrawForMain(width, height,_rootNode.get());
+    }
+    
+    void layout(float width = YGUndefined, float height = YGUndefined) {
         // FlexContainer의 레이아웃을 계산하고 자식들에게 적용
-        _rootNode->layout(width, height);
+        _rootNode->layout(width, height,_rootNode.get());
+        _rootNode->calMaxDemesion();
+        
+      
+        
+        /*
+        if (refFlexDirType == YGFlexDirectionColumn || refFlexDirType == YGFlexDirectionColumnReverse){
+            //열
+            if (isSizeFitMode == false){
+                //사이즈를 맞추는 모드
+                _rootNode->totalMaxWidth = std::max(_rootNode->totalMaxWidth, _rootNode->getWidth());
+            }
+            else{
+                if (_rootNode->totalMaxWidth != _rootNode->getWidth()){;
+                    reDrawTarget = true;
+                }
+            }
+        }
+         */
+        
+        /*
+        //_rootNode->totalMaxWidth = std::max(_rootNode->totalMaxWidth, _rootNode->getWidth());
+        _rootNode->setWidth(_rootNode->totalMaxWidth);
+        _rootNode->setHeight(_rootNode->totalMaxHeight);
+        
+        if (_rootNode->getCocosNode() != nullptr){
+            _rootNode->getCocosNode()->setContentSize(cocos2d::Size(_rootNode->totalMaxWidth,_rootNode->totalMaxHeight));
+        }
+         */
+        
+        /*
+        //조금 위험하니 확인필요.
+        if (reDrawTarget == true){
+            this->layout(width, height);
+        }
+  */
+        
         /*
         for (auto& child : _children) {
             child->layout(width, height);  // 각 자식에 대해 레이아웃 계산
