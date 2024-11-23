@@ -17,7 +17,6 @@
 
 class FlexNode {
 private:
-    
     cocos2d::Node* _cocosNode;  // Cocos2d-x Node
     YGNodeRef _ygNode;
     std::vector<std::shared_ptr<FlexNode>> _children;
@@ -26,19 +25,8 @@ private:
 public:
     bool isSizeToFit = false;
     
-    
-    
-    float totalMaxWidth = 0.0f;
-    float totalMaxHeight = 0.0f;
-    
     float virtualWidth = 0.0f;
     float virtualHeight = 0.0f;
-   
-    
-    
-    bool isTotalRootNode = false;
-    
-    
     
     FlexNode() {
         _ygNode = YGNodeNew();
@@ -60,7 +48,17 @@ public:
     }
     
     ~FlexNode() {
-        YGNodeFree(_ygNode);
+        if (_ygNode) {
+            YGNodeFree(_ygNode);
+            _ygNode = nullptr;
+        }
+        /*
+        // Cocos2d-x 노드 해제 (스마트 포인터가 아닐 경우)
+        if (_cocosNode) {
+            _cocosNode->removeFromParent();
+            _cocosNode = nullptr;
+        }
+         */
     }
     
     static std::shared_ptr<FlexNode> create(cocos2d::Node* node);
@@ -69,7 +67,8 @@ public:
     std::vector<std::shared_ptr<FlexNode>> getNodChilds() const ;
     
     FlexNode& setTagName(std::string tagNAme);
-
+    FlexNode& setContentSize(const cocos2d::Size& contentSize);
+    cocos2d::Size getContentSize(const cocos2d::Size& contentSize);
     
     float getContentWidth();
     float getContentHeight();
@@ -117,12 +116,12 @@ public:
     float getParentWidth();
     
     bool isRow();
-  
+    
     // 높이 가져오기
     float getHeight() const ;
     
     YGNodeRef getFirstChild(YGNodeRef parentNode);
-
+    
     YGNodeRef getLastChild(YGNodeRef parentNode);
     
     void layoutDrawForSub(float width = YGUndefined, float height = YGUndefined, FlexNode* refFlexNode = nullptr);
@@ -130,7 +129,9 @@ public:
     void layoutDrawForMain(float width = YGUndefined, float height = YGUndefined, FlexNode* refFlexNode = nullptr);
     
     void layoutDraw(float width = YGUndefined, float height = YGUndefined, FlexNode* refFlexNode = nullptr , bool isMainLayout = true);
-  
+    
+    void removeAllCocosNode();
+    
 };
 
 

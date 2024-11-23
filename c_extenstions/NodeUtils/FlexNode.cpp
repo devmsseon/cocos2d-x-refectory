@@ -20,7 +20,10 @@ FlexNode& FlexNode::setTagName(std::string tagNAme) {
 }
 
 std::shared_ptr<FlexNode> FlexNode::create(cocos2d::Node* node) {
-    return std::make_shared<FlexNode>(node);
+    //수동 메모리 관리(new와 delete)의 문제 → 스마트 포인터 등장 (std::shared_ptr, std::unique_ptr)
+    //스마트 포인터의 사용 편의성과 성능 문제 → std::make_shared 등장
+    auto tNode = std::make_shared<FlexNode>(node);
+    return tNode;
 }
 
 float FlexNode::getContentWidth() {
@@ -49,6 +52,19 @@ float FlexNode::getLimitWidth() {
     return _limitWidth;
 }
 
+void FlexNode::removeAllCocosNode() {
+    // Cocos2d-x 노드를 가져옵니다.
+    auto cocosNode = this->getCocosNode();
+    
+    if (cocosNode != nullptr){
+        // 자식 노드를 모두 제거합니다.
+        cocosNode->removeAllChildren();
+    }
+   
+    // _children 벡터에서 자식 노드를 지워줍니다.
+    _children.clear();  // 이 부분을 추가하여 자식 노드를 관리하는 스마트 포인터도 해제되도록 합니다.
+}
+
 FlexNode& FlexNode::setWidth(float width) {
     YGNodeStyleSetWidth(_ygNode, width);
     if (_cocosNode != nullptr){
@@ -63,6 +79,30 @@ FlexNode& FlexNode::setHeight(float height) {
         _cocosNode->setContentSize(cocos2d::Size(_cocosNode->getContentSize().width,height));
     }
     return *this;
+}
+
+// 너비 가져오기
+float FlexNode::getWidth() const {
+    return YGNodeStyleGetWidth(_ygNode).value;
+}
+// 높이 가져오기
+float FlexNode::getHeight() const {
+    return YGNodeStyleGetHeight(_ygNode).value;
+}
+
+FlexNode& FlexNode::setContentSize(const cocos2d::Size& contentSize){
+    YGNodeStyleSetWidth(_ygNode, contentSize.width);
+    YGNodeStyleSetHeight(_ygNode, contentSize.height);
+    if (_cocosNode != nullptr){
+        _cocosNode->setContentSize(contentSize);
+    }
+    return *this;
+}
+
+cocos2d::Size FlexNode::getContentSize(const cocos2d::Size& contentSize){
+    float posW = YGNodeLayoutGetWidth(_ygNode);
+    float posH = YGNodeLayoutGetHeight(_ygNode);
+    return cocos2d::Size(posW, posH);
 }
 
 FlexNode& FlexNode::setFlexDirection(YGFlexDirection direction) {
@@ -95,9 +135,26 @@ cocos2d::Node* FlexNode::getCocosNode() {
 }
 
 FlexNode& FlexNode::addChild(const std::shared_ptr<FlexNode>& child) {
+    
+    // 자식 FlexNode의 cocos2d Node를 가져오기
+    cocos2d::Node* cocosNode = child->getCocosNode();
+    
+    // dynamic_cast로 Label 여부 확인
+    if (cocos2d::Label* label = dynamic_cast<cocos2d::Label*>(cocosNode)) {
+        
+        // child가 Label일 경우 처리
+        label->setDimensions(this->getWidth(), 0); // 너비는 200, 높이는 0으로 설정 (자동 계산)
+        // labelTestNode->layoutDrawForSub();
+        child->setWidth(this->getWidth());
+        child->setHeight(cocosNode->getContentSize().height);
+    } else {
+        // child가 Label이 아닐 경우 일반적인 처리
+    }
+    
     YGNodeInsertChild(_ygNode, child->getNode(), YGNodeGetChildCount(_ygNode));
     _children.push_back(child);
     _cocosNode->addChild(child->getCocosNode());
+
     return *this;
 }
 
@@ -112,6 +169,8 @@ YGFlexDirection FlexNode::getFlexDirection() const {
     return YGNodeStyleGetFlexDirection(_ygNode);
 }
 
+
+
 // FlexWrap 설정
 FlexNode& FlexNode::setFlexWrap(YGWrap wrap) {
     YGNodeStyleSetFlexWrap(_ygNode, wrap);
@@ -123,10 +182,7 @@ YGWrap FlexNode::getFlexWrap() const {
     return YGNodeStyleGetFlexWrap(_ygNode);
 }
 
-// 너비 가져오기
-float FlexNode::getWidth() const {
-    return YGNodeStyleGetWidth(_ygNode).value;
-}
+
 
 float FlexNode::getParentWidth(){
     YGNodeRef parent = YGNodeGetParent(this->getNode());
@@ -146,10 +202,6 @@ bool FlexNode::isRow(){
     return retVal;
 }
 
-// 높이 가져오기
-float FlexNode::getHeight() const {
-    return YGNodeStyleGetHeight(_ygNode).value;
-}
 
 YGNodeRef FlexNode::getFirstChild(YGNodeRef parentNode) {
     if (!parentNode || YGNodeGetChildCount(parentNode) == 0) {
