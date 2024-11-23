@@ -9,7 +9,7 @@
 #define FlexContainer_hpp
 
 #include <stdio.h>
-#include "FlexNode.hpp"
+#include "FlexNode.h"
 
 
 
@@ -23,21 +23,19 @@
 class FlexContainer {
 private:
     std::shared_ptr<FlexNode> _rootNode;
-   // std::vector<FlexNode*> _children;   // 자식 FlexNode들
-    std::vector<std::shared_ptr<FlexNode>> _children;
 public:
-    bool isSizeFitMode = false;
-    
     FlexContainer() {
         auto tNode = cocos2d::Node::create();
         tNode->setAnchorPoint(cocos2d::Vec2(0,0));
         _rootNode = std::make_shared<FlexNode>(tNode);
         _rootNode->isTotalRootNode = true;
+        
+        //지금은 어쩔수 없음 일단 크게 잡아놔야 flex 시스템 자체에서계산함
+        //안그러면 -좌표값이 나와  일일이 계산해야되는데 엄청복잡함
+        //this->setWidth(2000);
+        //this->setHeight(2000);
     }
-    void setLimitWidth(float width) {
-        _rootNode->setLimitWidth(width);
-    }
-    
+   
     void setWidth(float width) {
         _rootNode->setWidth(width);
     }
@@ -96,10 +94,6 @@ public:
     
     FlexContainer& addChild(const std::shared_ptr<FlexNode>& child) {
       _rootNode->addChild(child);
-        /*
-        YGNodeInsertChild(_rootNode->getNode(), child->getNode(), YGNodeGetChildCount(_rootNode->getNode()));
-        _children.push_back(child);
-         */
         return *this;
     }
     
@@ -120,70 +114,10 @@ public:
         _rootNode->layoutDrawForMain(width, height,_rootNode.get());
     }
     
-    void layout(float width = YGUndefined, float height = YGUndefined) {
-        // FlexContainer의 레이아웃을 계산하고 자식들에게 적용
-        _rootNode->layout(width, height,_rootNode.get());
-        _rootNode->calMaxDemesion();
-        
-      
-        
-        /*
-        if (refFlexDirType == YGFlexDirectionColumn || refFlexDirType == YGFlexDirectionColumnReverse){
-            //열
-            if (isSizeFitMode == false){
-                //사이즈를 맞추는 모드
-                _rootNode->totalMaxWidth = std::max(_rootNode->totalMaxWidth, _rootNode->getWidth());
-            }
-            else{
-                if (_rootNode->totalMaxWidth != _rootNode->getWidth()){;
-                    reDrawTarget = true;
-                }
-            }
-        }
-         */
-        
-        /*
-        //_rootNode->totalMaxWidth = std::max(_rootNode->totalMaxWidth, _rootNode->getWidth());
-        _rootNode->setWidth(_rootNode->totalMaxWidth);
-        _rootNode->setHeight(_rootNode->totalMaxHeight);
-        
-        if (_rootNode->getCocosNode() != nullptr){
-            _rootNode->getCocosNode()->setContentSize(cocos2d::Size(_rootNode->totalMaxWidth,_rootNode->totalMaxHeight));
-        }
-         */
-        
-        /*
-        //조금 위험하니 확인필요.
-        if (reDrawTarget == true){
-            this->layout(width, height);
-        }
-  */
-        
-        /*
-        for (auto& child : _children) {
-            child->layout(width, height);  // 각 자식에 대해 레이아웃 계산
-        }
-         */
+    void layoutDrawForSub(float width = YGUndefined, float height = YGUndefined , FlexNode* refFlexNode = nullptr) {
+        _rootNode->layoutDrawForSub(width, height,_rootNode.get());
     }
-    
-    /*
-     void printLayout() const {
-     auto printNode = [](YGNodeRef node, int depth = 0) {
-     for (int i = 0; i < depth; ++i) std::cout << "  ";
-     std::cout << "Node: {"
-     << "x: " << YGNodeLayoutGetLeft(node)
-     << ", y: " << YGNodeLayoutGetTop(node)
-     << ", width: " << YGNodeLayoutGetWidth(node)
-     << ", height: " << YGNodeLayoutGetHeight(node)
-     << "}\n";
-     for (uint32_t i = 0; i < YGNodeGetChildCount(node); ++i) {
-     printNode(YGNodeGetChild(node, i), depth + 1);
-     }
-     };
-     
-     printNode(_rootNode->getNode());
-     }
-     */
+
 };
 
 #endif /* FlexContainer_hpp */

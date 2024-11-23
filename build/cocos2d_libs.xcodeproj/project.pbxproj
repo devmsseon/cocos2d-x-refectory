@@ -1284,11 +1284,11 @@
 		22CE21282CEDD8E70087911C /* FlexContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22CE21242CEDD8E70087911C /* FlexContainer.cpp */; };
 		22CE21292CEDD8E70087911C /* FlexContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22CE21242CEDD8E70087911C /* FlexContainer.cpp */; };
 		22CE21312CEDDC370087911C /* FlexContainer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 22CE212F2CEDDC370087911C /* FlexContainer.hpp */; };
-		22CE21322CEDDC370087911C /* FlexNode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 22CE21302CEDDC370087911C /* FlexNode.hpp */; };
+		22CE21322CEDDC370087911C /* FlexNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CE21302CEDDC370087911C /* FlexNode.h */; };
 		22CE21332CEDDC370087911C /* FlexContainer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 22CE212F2CEDDC370087911C /* FlexContainer.hpp */; };
-		22CE21342CEDDC370087911C /* FlexNode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 22CE21302CEDDC370087911C /* FlexNode.hpp */; };
+		22CE21342CEDDC370087911C /* FlexNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CE21302CEDDC370087911C /* FlexNode.h */; };
 		22CE21352CEDDC370087911C /* FlexContainer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 22CE212F2CEDDC370087911C /* FlexContainer.hpp */; };
-		22CE21362CEDDC370087911C /* FlexNode.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 22CE21302CEDDC370087911C /* FlexNode.hpp */; };
+		22CE21362CEDDC370087911C /* FlexNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CE21302CEDDC370087911C /* FlexNode.h */; };
 		22EEABA72CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
 		22EEABA92CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
 		22EEABAA2CDCAAD500959E5E /* MenuItemImageExtension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */; };
@@ -5159,7 +5159,7 @@
 		22CE21142CEDD8A80087911C /* FlexNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FlexNode.cpp; sourceTree = "<group>"; };
 		22CE21242CEDD8E70087911C /* FlexContainer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FlexContainer.cpp; sourceTree = "<group>"; };
 		22CE212F2CEDDC370087911C /* FlexContainer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FlexContainer.hpp; sourceTree = "<group>"; };
-		22CE21302CEDDC370087911C /* FlexNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FlexNode.hpp; sourceTree = "<group>"; };
+		22CE21302CEDDC370087911C /* FlexNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexNode.h; sourceTree = "<group>"; };
 		22EEABA42CDCAAD500959E5E /* MenuItemImageExtension.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MenuItemImageExtension.cpp; sourceTree = "<group>"; };
 		22EEABAC2CDCAB7000959E5E /* MenuItemImageExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuItemImageExtension.h; sourceTree = "<group>"; };
 		22EEACD02CDCEA7500959E5E /* NodeUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NodeUtils.cpp; sourceTree = "<group>"; };
@@ -7713,11 +7713,11 @@
 			isa = PBXGroup;
 			children = (
 				22CE212F2CEDDC370087911C /* FlexContainer.hpp */,
-				22CE21302CEDDC370087911C /* FlexNode.hpp */,
 				228C4EFC2CEA273900C75501 /* CCNodeUtil.h */,
 				228C501D2CEADD7000C75501 /* CCYFlexLayout.hpp */,
 				228C501E2CEADD7000C75501 /* YogaNode.cpp */,
 				22CE21242CEDD8E70087911C /* FlexContainer.cpp */,
+				22CE21302CEDDC370087911C /* FlexNode.h */,
 				22CE21142CEDD8A80087911C /* FlexNode.cpp */,
 			);
 			path = NodeUtils;
@@ -10135,7 +10135,7 @@
 				15AE190C19AAD35000C27E9E /* CCDisplayFactory.h in Headers */,
 				50864CA61C7BC1B000B3BAB1 /* cpConstraint.h in Headers */,
 				22CE21352CEDDC370087911C /* FlexContainer.hpp in Headers */,
-				22CE21362CEDDC370087911C /* FlexNode.hpp in Headers */,
+				22CE21362CEDDC370087911C /* FlexNode.h in Headers */,
 				5033419F1D9DC7B400770EC7 /* SkeletonBinary.h in Headers */,
 				B5CE6DCA1B3C05BA002B0419 /* UIRadioButton.h in Headers */,
 				15AE199119AAD37200C27E9E /* ImageViewReader.h in Headers */,
@@ -10443,7 +10443,7 @@
 				507B3D431C31BDD30067B53E /* CCPhysicsJoint.h in Headers */,
 				507B3D441C31BDD30067B53E /* CCPUScriptParser.h in Headers */,
 				22CE21312CEDDC370087911C /* FlexContainer.hpp in Headers */,
-				22CE21322CEDDC370087911C /* FlexNode.hpp in Headers */,
+				22CE21322CEDDC370087911C /* FlexNode.h in Headers */,
 				53E23A171E78B082009DD732 /* CCDevice-apple.h in Headers */,
 				507B3D451C31BDD30067B53E /* CCPUVortexAffectorTranslator.h in Headers */,
 				507B3D461C31BDD30067B53E /* poly2tri.h in Headers */,
@@ -11309,7 +11309,7 @@
 				50ABBEC21925AB6F00A911A9 /* CCValue.h in Headers */,
 				2980F0241BA9A5550059E678 /* CCUIMultilineTextField.h in Headers */,
 				22CE21332CEDDC370087911C /* FlexContainer.hpp in Headers */,
-				22CE21342CEDDC370087911C /* FlexNode.hpp in Headers */,
+				22CE21342CEDDC370087911C /* FlexNode.h in Headers */,
 				22EEACD92CDCEB0100959E5E /* NodeUtils.h in Headers */,
 				50ABBECA1925AB6F00A911A9 /* firePngData.h in Headers */,
 				B257B4511989D5E800D9A687 /* CCPrimitive.h in Headers */,
