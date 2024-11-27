@@ -24,6 +24,11 @@ private:
     std::vector<std::shared_ptr<CCFlexLayout>> _children;
     float _limitWidth = 0.0f;
     std::string tagName_ = "";
+    
+    float marginLeft_ = 0.0;
+    float marginRight_ = 0.0;
+    float marginTop_ = 0.0;
+    float marginBottom_ = 0.0;
 public:
     bool isSizeToFit = false;
     
@@ -69,6 +74,10 @@ public:
     std::vector<std::shared_ptr<CCFlexLayout>> getNodChilds() const ;
     
     CCFlexLayout& setTagName(std::string tagNAme);
+    
+    float getPositionY();
+    CCFlexLayout& setPositionY(float poxY);
+    CCFlexLayout& setPosition(float posX , float poxY);
     CCFlexLayout& setContentSize(const cocos2d::Size& contentSize);
     cocos2d::Size getContentSize(const cocos2d::Size& contentSize);
     
@@ -122,6 +131,11 @@ public:
     // 높이 가져오기
     float getHeight() const ;
     
+    float getLeftRightMargin();
+    float getTopBottomMargin();
+    
+    CCFlexLayout& setBackGroundColor(const cocos2d::Color3B &color);
+    
     YGNodeRef getFirstChild(YGNodeRef parentNode);
     
     YGNodeRef getLastChild(YGNodeRef parentNode);
@@ -135,6 +149,7 @@ public:
     void removeAllCocosNode();
     
 };
+
 
 
 

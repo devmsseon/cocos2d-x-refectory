@@ -6,6 +6,7 @@
 //
 
 #include "CCFlexLayout.h"
+#include "CCNodeWrapLayout.h"
 
 YGNodeRef CCFlexLayout::getNode() const {
     return _ygNode;
@@ -26,12 +27,46 @@ std::shared_ptr<CCFlexLayout> CCFlexLayout::create(cocos2d::Node* node) {
     return tNode;
 }
 
+/*
 float CCFlexLayout::getContentWidth() {
     return YGNodeStyleGetWidth(_ygNode).value;
 }
-float CCFlexLayout::getContentHeight() {
-    return YGNodeStyleGetHeight(_ygNode).value;
+*/
+
+float CCFlexLayout::getLeftRightMargin()  {
+    // 왼쪽과 오른쪽 마진 제외
+    //float marginLeft = YGNodeLayoutGetMargin(_ygNode, YGEdgeLeft);
+    //float marginRight = YGNodeLayoutGetMargin(_ygNode, YGEdgeRight);
+    float marginLeft = marginLeft_;
+    float marginRight = marginRight_;
+    float total =  marginLeft + marginRight;
+    return total;
 }
+float CCFlexLayout::getTopBottomMargin()  {
+    // 왼쪽과 오른쪽 마진 제외
+    //float marginTop = YGNodeLayoutGetMargin(_ygNode, YGEdgeTop);
+    //float marginBottom = YGNodeLayoutGetMargin(_ygNode, YGEdgeBottom);
+    float marginTop = marginTop_;
+    float marginBottom = marginBottom_;
+    float total =  marginTop + marginBottom;
+    return total;
+}
+
+float CCFlexLayout::getContentWidth()  {
+    // 기본 너비
+    float width = YGNodeStyleGetWidth(_ygNode).value;
+    return width - this->getLeftRightMargin(); // 마진 제외
+}
+
+float CCFlexLayout::getContentHeight() {
+    // 기본 높이
+    float height = YGNodeStyleGetHeight(_ygNode).value;
+    return height - this->getTopBottomMargin(); // 마진 제외
+}
+
+//float CCFlexLayout::getContentHeight() {
+//    return YGNodeStyleGetHeight(_ygNode).value;
+//}
 
 CCFlexLayout& CCFlexLayout::setPadding(YGEdge edgeType , float edgeValue) {
     YGNodeStyleSetPadding(_ygNode,edgeType,edgeValue);
@@ -39,6 +74,18 @@ CCFlexLayout& CCFlexLayout::setPadding(YGEdge edgeType , float edgeValue) {
 }
 
 CCFlexLayout& CCFlexLayout::setMargin(YGEdge edgeType , float edgeValue) {
+    if (edgeType == YGEdgeTop){
+        marginTop_ = edgeValue;
+    }
+    else if (edgeType == YGEdgeBottom){
+        marginBottom_ = edgeValue;
+    }
+    else if (edgeType == YGEdgeLeft){
+        marginLeft_ = edgeValue;
+    }
+    else if (edgeType == YGEdgeRight){
+        marginRight_ = edgeValue;
+    }
     YGNodeStyleSetMargin(_ygNode,edgeType,edgeValue);
     return *this;
 }
@@ -90,6 +137,30 @@ float CCFlexLayout::getHeight() const {
     return YGNodeStyleGetHeight(_ygNode).value;
 }
 
+float CCFlexLayout::getPositionY(){
+    float retVal = 0.0f;
+    if (_cocosNode != nullptr){
+        retVal = _cocosNode->getPositionY();
+    }
+    return retVal;
+}
+
+CCFlexLayout& CCFlexLayout::setPositionY(float poxY){
+    if (_cocosNode != nullptr){
+        _cocosNode->setPositionY(poxY);
+    }
+    return *this;
+}
+
+
+CCFlexLayout& CCFlexLayout::setPosition(float posX , float poxY){
+    if (_cocosNode != nullptr){
+        _cocosNode->setPosition(posX, poxY);
+    }
+    return *this;
+}
+
+
 CCFlexLayout& CCFlexLayout::setContentSize(const cocos2d::Size& contentSize){
     YGNodeStyleSetWidth(_ygNode, contentSize.width);
     YGNodeStyleSetHeight(_ygNode, contentSize.height);
@@ -135,23 +206,25 @@ cocos2d::Node* CCFlexLayout::getCocosNode() {
 }
 
 CCFlexLayout& CCFlexLayout::addChild(const std::shared_ptr<CCFlexLayout>& child) {
+    YGNodeInsertChild(_ygNode, child->getNode(), YGNodeGetChildCount(_ygNode));
     
     // 자식 FlexNode의 cocos2d Node를 가져오기
     cocos2d::Node* cocosNode = child->getCocosNode();
     
     // dynamic_cast로 Label 여부 확인
     if (cocos2d::Label* label = dynamic_cast<cocos2d::Label*>(cocosNode)) {
+        auto tWidth = this->getContentWidth() - child->getLeftRightMargin();
         
         // child가 Label일 경우 처리
-        label->setDimensions(this->getWidth(), 0); // 너비는 200, 높이는 0으로 설정 (자동 계산)
+        label->setDimensions(tWidth, 0); // 너비는 200, 높이는 0으로 설정 (자동 계산)
         // labelTestNode->layoutDrawForSub();
-        child->setWidth(this->getWidth());
+        child->setWidth(tWidth);
         child->setHeight(cocosNode->getContentSize().height);
     } else {
         // child가 Label이 아닐 경우 일반적인 처리
     }
     
-    YGNodeInsertChild(_ygNode, child->getNode(), YGNodeGetChildCount(_ygNode));
+    
     _children.push_back(child);
     _cocosNode->addChild(child->getCocosNode());
 
@@ -200,6 +273,18 @@ bool CCFlexLayout::isRow(){
         retVal = true;
     }
     return retVal;
+}
+
+CCFlexLayout& CCFlexLayout::setBackGroundColor(const cocos2d::Color3B &color) {
+    auto cocosNode = this->getCocosNode();
+    if (cocosNode == nullptr){
+        return *this;
+    }
+    
+    if (CCNodeWrapLayout* tNode = dynamic_cast<CCNodeWrapLayout*>(cocosNode)) {
+        tNode->setBackGroundColor(color);
+    }
+    return *this;
 }
 
 
@@ -363,10 +448,12 @@ void CCFlexLayout::layoutDraw(float width, float height, CCFlexLayout* refFlexNo
             auto yogaObj = _children[i];
             auto cocosNode = yogaObj->getCocosNode();
             if (cocosNode != nullptr){
-                // 마진을 포함하여 위치 설정
-                cocosNode->setPosition(posX,posY);
-                cocosNode->setContentSize(cocos2d::Size(posW, posH));
                 cocos2d::log("child->getPosition() : %f : %f", cocosNode->getPosition().x , cocosNode->getPosition().y);
+                // 마진을 포함하여 위치 설정
+                //cocosNode->setPosition(posX,posY);
+                //cocosNode->setContentSize(cocos2d::Size(posW, posH));
+                yogaObj->setPosition(posX,posY);
+                yogaObj->setContentSize(cocos2d::Size(posW, posH));
             }
         }
 
@@ -408,11 +495,15 @@ void CCFlexLayout::layoutDraw(float width, float height, CCFlexLayout* refFlexNo
         if (postionYCondition == true){
             for (uint32_t i = 0; i < YGNodeGetChildCount(_ygNode); i++) {
                 auto yogaObj = _children[i];
+                /*
                 auto cocosNode = yogaObj->getCocosNode();
                 if (cocosNode != nullptr){
                     // 마진을 포함하여 위치 설정
                     cocosNode->setPositionY(cocosNode->getPositionY() + (maxChildHeight));
                 }
+                 */
+                
+                yogaObj->setPositionY(yogaObj->getPositionY() + (maxChildHeight));
             }
         }
     }
