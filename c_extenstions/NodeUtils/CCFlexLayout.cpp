@@ -5,54 +5,54 @@
 //  Created by 선명수 on 11/20/24.
 //
 
-#include "FlexNode.h"
+#include "CCFlexLayout.h"
 
-YGNodeRef FlexNode::getNode() const {
+YGNodeRef CCFlexLayout::getNode() const {
     return _ygNode;
 }
-std::vector<std::shared_ptr<FlexNode>> FlexNode::getNodChilds() const {
+std::vector<std::shared_ptr<CCFlexLayout>> CCFlexLayout::getNodChilds() const {
     return _children;
 }
 
-FlexNode& FlexNode::setTagName(std::string tagNAme) {
+CCFlexLayout& CCFlexLayout::setTagName(std::string tagNAme) {
     this->tagName_ = tagNAme;
     return *this;
 }
 
-std::shared_ptr<FlexNode> FlexNode::create(cocos2d::Node* node) {
+std::shared_ptr<CCFlexLayout> CCFlexLayout::create(cocos2d::Node* node) {
     //수동 메모리 관리(new와 delete)의 문제 → 스마트 포인터 등장 (std::shared_ptr, std::unique_ptr)
     //스마트 포인터의 사용 편의성과 성능 문제 → std::make_shared 등장
-    auto tNode = std::make_shared<FlexNode>(node);
+    auto tNode = std::make_shared<CCFlexLayout>(node);
     return tNode;
 }
 
-float FlexNode::getContentWidth() {
+float CCFlexLayout::getContentWidth() {
     return YGNodeStyleGetWidth(_ygNode).value;
 }
-float FlexNode::getContentHeight() {
+float CCFlexLayout::getContentHeight() {
     return YGNodeStyleGetHeight(_ygNode).value;
 }
 
-FlexNode& FlexNode::setPadding(YGEdge edgeType , float edgeValue) {
+CCFlexLayout& CCFlexLayout::setPadding(YGEdge edgeType , float edgeValue) {
     YGNodeStyleSetPadding(_ygNode,edgeType,edgeValue);
     return *this;
 }
 
-FlexNode& FlexNode::setMargin(YGEdge edgeType , float edgeValue) {
+CCFlexLayout& CCFlexLayout::setMargin(YGEdge edgeType , float edgeValue) {
     YGNodeStyleSetMargin(_ygNode,edgeType,edgeValue);
     return *this;
 }
 
-FlexNode& FlexNode::setLimitWidth(float width) {
+CCFlexLayout& CCFlexLayout::setLimitWidth(float width) {
     _limitWidth = width;
     YGNodeStyleSetWidth(_ygNode, width);
     return *this;
 }
-float FlexNode::getLimitWidth() {
+float CCFlexLayout::getLimitWidth() {
     return _limitWidth;
 }
 
-void FlexNode::removeAllCocosNode() {
+void CCFlexLayout::removeAllCocosNode() {
     // Cocos2d-x 노드를 가져옵니다.
     auto cocosNode = this->getCocosNode();
     
@@ -65,7 +65,7 @@ void FlexNode::removeAllCocosNode() {
     _children.clear();  // 이 부분을 추가하여 자식 노드를 관리하는 스마트 포인터도 해제되도록 합니다.
 }
 
-FlexNode& FlexNode::setWidth(float width) {
+CCFlexLayout& CCFlexLayout::setWidth(float width) {
     YGNodeStyleSetWidth(_ygNode, width);
     if (_cocosNode != nullptr){
         _cocosNode->setContentSize(cocos2d::Size(width,_cocosNode->getContentSize().height));
@@ -73,7 +73,7 @@ FlexNode& FlexNode::setWidth(float width) {
     return *this;
 }
 
-FlexNode& FlexNode::setHeight(float height) {
+CCFlexLayout& CCFlexLayout::setHeight(float height) {
     YGNodeStyleSetHeight(_ygNode, height);
     if (_cocosNode != nullptr){
         _cocosNode->setContentSize(cocos2d::Size(_cocosNode->getContentSize().width,height));
@@ -82,15 +82,15 @@ FlexNode& FlexNode::setHeight(float height) {
 }
 
 // 너비 가져오기
-float FlexNode::getWidth() const {
+float CCFlexLayout::getWidth() const {
     return YGNodeStyleGetWidth(_ygNode).value;
 }
 // 높이 가져오기
-float FlexNode::getHeight() const {
+float CCFlexLayout::getHeight() const {
     return YGNodeStyleGetHeight(_ygNode).value;
 }
 
-FlexNode& FlexNode::setContentSize(const cocos2d::Size& contentSize){
+CCFlexLayout& CCFlexLayout::setContentSize(const cocos2d::Size& contentSize){
     YGNodeStyleSetWidth(_ygNode, contentSize.width);
     YGNodeStyleSetHeight(_ygNode, contentSize.height);
     if (_cocosNode != nullptr){
@@ -99,42 +99,42 @@ FlexNode& FlexNode::setContentSize(const cocos2d::Size& contentSize){
     return *this;
 }
 
-cocos2d::Size FlexNode::getContentSize(const cocos2d::Size& contentSize){
+cocos2d::Size CCFlexLayout::getContentSize(const cocos2d::Size& contentSize){
     float posW = YGNodeLayoutGetWidth(_ygNode);
     float posH = YGNodeLayoutGetHeight(_ygNode);
     return cocos2d::Size(posW, posH);
 }
 
-FlexNode& FlexNode::setFlexDirection(YGFlexDirection direction) {
+CCFlexLayout& CCFlexLayout::setFlexDirection(YGFlexDirection direction) {
     YGNodeStyleSetFlexDirection(_ygNode, direction);
     return *this;
 }
 
-FlexNode& FlexNode::setJustifyContent(YGJustify justify) {
+CCFlexLayout& CCFlexLayout::setJustifyContent(YGJustify justify) {
     YGNodeStyleSetJustifyContent(_ygNode, justify);
     return *this;
 }
 
-FlexNode& FlexNode::setAlignItems(YGAlign align) {
+CCFlexLayout& CCFlexLayout::setAlignItems(YGAlign align) {
     YGNodeStyleSetAlignItems(_ygNode, align);
     return *this;
 }
 
-FlexNode& FlexNode::setAlignSelf(YGAlign align) {
+CCFlexLayout& CCFlexLayout::setAlignSelf(YGAlign align) {
     YGNodeStyleSetAlignSelf(_ygNode, align);
     return *this;
 }
 
-FlexNode& FlexNode::setAlignContent(YGAlign align) {
+CCFlexLayout& CCFlexLayout::setAlignContent(YGAlign align) {
     YGNodeStyleSetAlignContent(_ygNode, align);
     return *this;
 }
 
-cocos2d::Node* FlexNode::getCocosNode() {
+cocos2d::Node* CCFlexLayout::getCocosNode() {
     return _cocosNode;
 }
 
-FlexNode& FlexNode::addChild(const std::shared_ptr<FlexNode>& child) {
+CCFlexLayout& CCFlexLayout::addChild(const std::shared_ptr<CCFlexLayout>& child) {
     
     // 자식 FlexNode의 cocos2d Node를 가져오기
     cocos2d::Node* cocosNode = child->getCocosNode();
@@ -159,32 +159,32 @@ FlexNode& FlexNode::addChild(const std::shared_ptr<FlexNode>& child) {
 }
 
 // 람다를 활용해 하위 노드 구성
-FlexNode& FlexNode::define(const std::function<void(FlexNode&)>& defineFunc) {
+CCFlexLayout& CCFlexLayout::define(const std::function<void(CCFlexLayout&)>& defineFunc) {
     defineFunc(*this);
     return *this;
 }
 
 // FlexDirection 가져오기
-YGFlexDirection FlexNode::getFlexDirection() const {
+YGFlexDirection CCFlexLayout::getFlexDirection() const {
     return YGNodeStyleGetFlexDirection(_ygNode);
 }
 
 
 
 // FlexWrap 설정
-FlexNode& FlexNode::setFlexWrap(YGWrap wrap) {
+CCFlexLayout& CCFlexLayout::setFlexWrap(YGWrap wrap) {
     YGNodeStyleSetFlexWrap(_ygNode, wrap);
     return *this;
 }
 
 // FlexWrap 가져오기
-YGWrap FlexNode::getFlexWrap() const {
+YGWrap CCFlexLayout::getFlexWrap() const {
     return YGNodeStyleGetFlexWrap(_ygNode);
 }
 
 
 
-float FlexNode::getParentWidth(){
+float CCFlexLayout::getParentWidth(){
     YGNodeRef parent = YGNodeGetParent(this->getNode());
     if (parent == nullptr){
         return 0;
@@ -193,7 +193,7 @@ float FlexNode::getParentWidth(){
     return width;
 }
 
-bool FlexNode::isRow(){
+bool CCFlexLayout::isRow(){
     bool retVal = false;
     auto directionType = YGNodeStyleGetFlexDirection(_ygNode);
     if (directionType == YGFlexDirectionRow || directionType == YGFlexDirectionRowReverse){
@@ -203,14 +203,14 @@ bool FlexNode::isRow(){
 }
 
 
-YGNodeRef FlexNode::getFirstChild(YGNodeRef parentNode) {
+YGNodeRef CCFlexLayout::getFirstChild(YGNodeRef parentNode) {
     if (!parentNode || YGNodeGetChildCount(parentNode) == 0) {
         return nullptr; // 부모 노드가 없거나 자식이 없는 경우
     }
     return YGNodeGetChild(parentNode, 0); // 첫 번째 자식 반환
 }
 
-YGNodeRef FlexNode::getLastChild(YGNodeRef parentNode) {
+YGNodeRef CCFlexLayout::getLastChild(YGNodeRef parentNode) {
     size_t childCount = YGNodeGetChildCount(parentNode);
     if (!parentNode || childCount == 0) {
         return nullptr; // 부모 노드가 없거나 자식이 없는 경우
@@ -218,15 +218,15 @@ YGNodeRef FlexNode::getLastChild(YGNodeRef parentNode) {
     return YGNodeGetChild(parentNode, childCount - 1); // 마지막 자식 반환
 }
 
-void FlexNode::layoutDrawForSub(float width, float height, FlexNode* refFlexNode){
+void CCFlexLayout::layoutDrawForSub(float width, float height, CCFlexLayout* refFlexNode){
     this->layoutDraw(width,height,refFlexNode,false);
 }
 
-void FlexNode::layoutDrawForMain(float width ,float height, FlexNode* refFlexNode ){
+void CCFlexLayout::layoutDrawForMain(float width ,float height, CCFlexLayout* refFlexNode ){
     this->layoutDraw(width,height,refFlexNode,true);
 }
 
-void FlexNode::layoutDraw(float width, float height, FlexNode* refFlexNode, bool isMainLayout) {
+void CCFlexLayout::layoutDraw(float width, float height, CCFlexLayout* refFlexNode, bool isMainLayout) {
 
     YGNodeCalculateLayout(_ygNode, width, height, YGNodeLayoutGetDirection(_ygNode));
     

@@ -15,11 +15,13 @@
 #include <yoga/Yoga.h>
 #include <cocos2d.h>
 
-class FlexNode {
+class CCFlexLayout {
 private:
     cocos2d::Node* _cocosNode;  // Cocos2d-x Node
     YGNodeRef _ygNode;
-    std::vector<std::shared_ptr<FlexNode>> _children;
+    
+    //_rootNode는 std::shared_ptr로 관리되므로, 직접 해제하지 않아도 됩니다. std::shared_ptr는 소유권을 관리하며, 참조 카운트가 0이 되는 순간 자동으로 메모리를 해제합니다.
+    std::vector<std::shared_ptr<CCFlexLayout>> _children;
     float _limitWidth = 0.0f;
     std::string tagName_ = "";
 public:
@@ -28,10 +30,10 @@ public:
     float virtualWidth = 0.0f;
     float virtualHeight = 0.0f;
     
-    FlexNode() {
+    CCFlexLayout() {
         _ygNode = YGNodeNew();
     }
-    FlexNode(cocos2d::Node* node) : _cocosNode(_cocosNode) {
+    CCFlexLayout(cocos2d::Node* node) : _cocosNode(_cocosNode) {
         _ygNode = YGNodeNew();
         // Node에 대응되는 YGNode 설정
         if (!_ygNode) {
@@ -47,7 +49,7 @@ public:
         }
     }
     
-    ~FlexNode() {
+    ~CCFlexLayout() {
         if (_ygNode) {
             YGNodeFree(_ygNode);
             _ygNode = nullptr;
@@ -61,51 +63,51 @@ public:
          */
     }
     
-    static std::shared_ptr<FlexNode> create(cocos2d::Node* node);
+    static std::shared_ptr<CCFlexLayout> create(cocos2d::Node* node);
     
     YGNodeRef getNode() const;
-    std::vector<std::shared_ptr<FlexNode>> getNodChilds() const ;
+    std::vector<std::shared_ptr<CCFlexLayout>> getNodChilds() const ;
     
-    FlexNode& setTagName(std::string tagNAme);
-    FlexNode& setContentSize(const cocos2d::Size& contentSize);
+    CCFlexLayout& setTagName(std::string tagNAme);
+    CCFlexLayout& setContentSize(const cocos2d::Size& contentSize);
     cocos2d::Size getContentSize(const cocos2d::Size& contentSize);
     
     float getContentWidth();
     float getContentHeight();
     
-    FlexNode& setPadding(YGEdge edgeType , float edgeValue);
+    CCFlexLayout& setPadding(YGEdge edgeType , float edgeValue);
     
-    FlexNode& setMargin(YGEdge edgeType , float edgeValue);
+    CCFlexLayout& setMargin(YGEdge edgeType , float edgeValue);
     
-    FlexNode& setLimitWidth(float width);
+    CCFlexLayout& setLimitWidth(float width);
     float getLimitWidth();
     
-    FlexNode& setWidth(float width);
+    CCFlexLayout& setWidth(float width);
     
-    FlexNode& setHeight(float height);
+    CCFlexLayout& setHeight(float height);
     
-    FlexNode& setFlexDirection(YGFlexDirection direction);
+    CCFlexLayout& setFlexDirection(YGFlexDirection direction);
     
-    FlexNode& setJustifyContent(YGJustify justify);
+    CCFlexLayout& setJustifyContent(YGJustify justify);
     
-    FlexNode& setAlignItems(YGAlign align);
+    CCFlexLayout& setAlignItems(YGAlign align);
     
-    FlexNode& setAlignSelf(YGAlign align);
+    CCFlexLayout& setAlignSelf(YGAlign align);
     
-    FlexNode& setAlignContent(YGAlign align);
+    CCFlexLayout& setAlignContent(YGAlign align);
     
     cocos2d::Node* getCocosNode();
     
-    FlexNode& addChild(const std::shared_ptr<FlexNode>& child);
+    CCFlexLayout& addChild(const std::shared_ptr<CCFlexLayout>& child);
     
     // 람다를 활용해 하위 노드 구성
-    FlexNode& define(const std::function<void(FlexNode&)>& defineFunc);
+    CCFlexLayout& define(const std::function<void(CCFlexLayout&)>& defineFunc);
     
     // FlexDirection 가져오기
     YGFlexDirection getFlexDirection() const ;
     
     // FlexWrap 설정
-    FlexNode& setFlexWrap(YGWrap wrap);
+    CCFlexLayout& setFlexWrap(YGWrap wrap);
     
     // FlexWrap 가져오기
     YGWrap getFlexWrap() const;
@@ -124,11 +126,11 @@ public:
     
     YGNodeRef getLastChild(YGNodeRef parentNode);
     
-    void layoutDrawForSub(float width = YGUndefined, float height = YGUndefined, FlexNode* refFlexNode = nullptr);
+    void layoutDrawForSub(float width = YGUndefined, float height = YGUndefined, CCFlexLayout* refFlexNode = nullptr);
     
-    void layoutDrawForMain(float width = YGUndefined, float height = YGUndefined, FlexNode* refFlexNode = nullptr);
+    void layoutDrawForMain(float width = YGUndefined, float height = YGUndefined, CCFlexLayout* refFlexNode = nullptr);
     
-    void layoutDraw(float width = YGUndefined, float height = YGUndefined, FlexNode* refFlexNode = nullptr , bool isMainLayout = true);
+    void layoutDraw(float width = YGUndefined, float height = YGUndefined, CCFlexLayout* refFlexNode = nullptr , bool isMainLayout = true);
     
     void removeAllCocosNode();
     
