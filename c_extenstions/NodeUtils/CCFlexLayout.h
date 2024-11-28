@@ -75,6 +75,7 @@ public:
     
     CCFlexLayout& setTagName(std::string tagNAme);
     
+    float getPositionX();
     float getPositionY();
     CCFlexLayout& setPositionY(float poxY);
     CCFlexLayout& setPosition(float posX , float poxY);
@@ -107,7 +108,7 @@ public:
     
     cocos2d::Node* getCocosNode();
     
-    CCFlexLayout& addChild(const std::shared_ptr<CCFlexLayout>& child);
+    CCFlexLayout& addChild(const std::shared_ptr<CCFlexLayout>& child ,bool fitWidth = false);
     
     // 람다를 활용해 하위 노드 구성
     CCFlexLayout& define(const std::function<void(CCFlexLayout&)>& defineFunc);
@@ -139,6 +140,12 @@ public:
     YGNodeRef getFirstChild(YGNodeRef parentNode);
     
     YGNodeRef getLastChild(YGNodeRef parentNode);
+    
+    // 람다를 활용해 하위 노드 구성
+    void fitWidth();
+    void fitHeight();
+    void fitContent();
+
     
     void layoutDrawForSub(float width = YGUndefined, float height = YGUndefined, CCFlexLayout* refFlexNode = nullptr);
     

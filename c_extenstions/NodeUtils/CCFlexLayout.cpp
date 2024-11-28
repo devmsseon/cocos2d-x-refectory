@@ -55,13 +55,15 @@ float CCFlexLayout::getTopBottomMargin()  {
 float CCFlexLayout::getContentWidth()  {
     // 기본 너비
     float width = YGNodeStyleGetWidth(_ygNode).value;
-    return width - this->getLeftRightMargin(); // 마진 제외
+    width = width - this->getLeftRightMargin(); // 마진 제외
+    return width; // 마진 제외
 }
 
 float CCFlexLayout::getContentHeight() {
     // 기본 높이
     float height = YGNodeStyleGetHeight(_ygNode).value;
-    return height - this->getTopBottomMargin(); // 마진 제외
+    height = height - this->getTopBottomMargin();
+    return height; // 마진 제외
 }
 
 //float CCFlexLayout::getContentHeight() {
@@ -137,6 +139,14 @@ float CCFlexLayout::getHeight() const {
     return YGNodeStyleGetHeight(_ygNode).value;
 }
 
+float CCFlexLayout::getPositionX(){
+    float retVal = 0.0f;
+    if (_cocosNode != nullptr){
+        retVal = _cocosNode->getPositionX();
+    }
+    return retVal;
+}
+
 float CCFlexLayout::getPositionY(){
     float retVal = 0.0f;
     if (_cocosNode != nullptr){
@@ -205,30 +215,49 @@ cocos2d::Node* CCFlexLayout::getCocosNode() {
     return _cocosNode;
 }
 
-CCFlexLayout& CCFlexLayout::addChild(const std::shared_ptr<CCFlexLayout>& child) {
+CCFlexLayout& CCFlexLayout::addChild(const std::shared_ptr<CCFlexLayout>& child ,bool fitWidth) {
     YGNodeInsertChild(_ygNode, child->getNode(), YGNodeGetChildCount(_ygNode));
     
     // 자식 FlexNode의 cocos2d Node를 가져오기
     cocos2d::Node* cocosNode = child->getCocosNode();
     
-    // dynamic_cast로 Label 여부 확인
-    if (cocos2d::Label* label = dynamic_cast<cocos2d::Label*>(cocosNode)) {
+    
+    // child가 Label이 아닐 경우 일반적인 처리
+    if (fitWidth == true){
         auto tWidth = this->getContentWidth() - child->getLeftRightMargin();
-        
-        // child가 Label일 경우 처리
-        label->setDimensions(tWidth, 0); // 너비는 200, 높이는 0으로 설정 (자동 계산)
+        // dynamic_cast로 Label 여부 확인
+        if (cocos2d::Label* label = dynamic_cast<cocos2d::Label*>(cocosNode)) {
+            // child가 Label일 경우 처리
+            label->setDimensions(tWidth, 0); // 너비는 200, 높이는 0으로 설정 (자동 계산)
+            
+            child->setHeight(cocosNode->getContentSize().height);
+        }
         // labelTestNode->layoutDrawForSub();
         child->setWidth(tWidth);
-        child->setHeight(cocosNode->getContentSize().height);
-    } else {
-        // child가 Label이 아닐 경우 일반적인 처리
     }
-    
-    
+
     _children.push_back(child);
     _cocosNode->addChild(child->getCocosNode());
 
     return *this;
+}
+
+
+// 람다를 활용해 하위 노드 구성
+void CCFlexLayout::fitWidth(){
+    this->setWidth(this->getContentWidth());
+}
+void CCFlexLayout::fitHeight(){
+    this->setHeight(this->virtualHeight + this->getTopBottomMargin());
+}
+
+//void CCFlexLayout::fitHeight(){
+//    this->setHeight(this->getContentHeight());
+//}
+
+void CCFlexLayout::fitContent(){
+    this->fitWidth();
+    this->fitHeight();
 }
 
 // 람다를 활용해 하위 노드 구성
