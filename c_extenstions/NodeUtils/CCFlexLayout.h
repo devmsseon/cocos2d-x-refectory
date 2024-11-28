@@ -136,16 +136,21 @@ public:
     float getTopBottomMargin();
     
     CCFlexLayout& setBackGroundColor(const cocos2d::Color3B &color);
-    
+    CCFlexLayout& setBackGroundImage(const std::string& fileName );
     YGNodeRef getFirstChild(YGNodeRef parentNode);
     
     YGNodeRef getLastChild(YGNodeRef parentNode);
     
     // 람다를 활용해 하위 노드 구성
+    //layoutDrawForMain 또는 layoutDrawForSub 사용후에만 유효함
     void fitWidth();
+    void fitWidthForTarget(CCFlexLayout &targetLayout);
     void fitHeight();
     void fitContent();
 
+    CCFlexLayout& setWrapCopy(CCFlexLayout &targetLayout);
+    YGAlign getAlignContent();
+    YGAlign getAlignItems();
     
     void layoutDrawForSub(float width = YGUndefined, float height = YGUndefined, CCFlexLayout* refFlexNode = nullptr);
     

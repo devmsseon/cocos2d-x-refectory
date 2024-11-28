@@ -72,6 +72,19 @@ float CCFlexLayout::getContentHeight() {
 
 CCFlexLayout& CCFlexLayout::setPadding(YGEdge edgeType , float edgeValue) {
     YGNodeStyleSetPadding(_ygNode,edgeType,edgeValue);
+    
+    if (edgeType == YGEdgeTop){
+        marginTop_ = edgeValue;
+    }
+    else if (edgeType == YGEdgeBottom){
+        marginBottom_ = edgeValue;
+    }
+    else if (edgeType == YGEdgeLeft){
+        marginLeft_ = edgeValue;
+    }
+    else if (edgeType == YGEdgeRight){
+        marginRight_ = edgeValue;
+    }
     return *this;
 }
 
@@ -196,6 +209,10 @@ CCFlexLayout& CCFlexLayout::setJustifyContent(YGJustify justify) {
     return *this;
 }
 
+YGAlign CCFlexLayout::getAlignItems() {
+    return YGNodeStyleGetAlignItems(_ygNode);
+}
+
 CCFlexLayout& CCFlexLayout::setAlignItems(YGAlign align) {
     YGNodeStyleSetAlignItems(_ygNode, align);
     return *this;
@@ -211,8 +228,19 @@ CCFlexLayout& CCFlexLayout::setAlignContent(YGAlign align) {
     return *this;
 }
 
+YGAlign CCFlexLayout::getAlignContent() {
+    return YGNodeStyleGetAlignContent(_ygNode);
+}
+
 cocos2d::Node* CCFlexLayout::getCocosNode() {
     return _cocosNode;
+}
+
+CCFlexLayout& CCFlexLayout::setWrapCopy(CCFlexLayout &targetLayout) {
+    this->setFlexDirection(targetLayout.getFlexDirection());
+    this->setAlignItems(targetLayout.getAlignItems());
+    this->setAlignContent(targetLayout.getAlignContent());
+    return *this;
 }
 
 CCFlexLayout& CCFlexLayout::addChild(const std::shared_ptr<CCFlexLayout>& child ,bool fitWidth) {
@@ -232,6 +260,14 @@ CCFlexLayout& CCFlexLayout::addChild(const std::shared_ptr<CCFlexLayout>& child 
             
             child->setHeight(cocosNode->getContentSize().height);
         }
+        /*
+        else if (cocos2d::ui::Text* text = dynamic_cast<cocos2d::ui::Text*>(cocosNode)) {
+            // child가 Label일 경우 처리
+            //text->setDimensions(tWidth, 0); // 너비는 200, 높이는 0으로 설정 (자동 계산)
+            
+            child->setHeight(cocosNode->getContentSize().height);
+        }
+         */
         // labelTestNode->layoutDrawForSub();
         child->setWidth(tWidth);
     }
@@ -245,8 +281,13 @@ CCFlexLayout& CCFlexLayout::addChild(const std::shared_ptr<CCFlexLayout>& child 
 
 // 람다를 활용해 하위 노드 구성
 void CCFlexLayout::fitWidth(){
-    this->setWidth(this->getContentWidth());
+    this->setWidth(this->virtualWidth + this->getTopBottomMargin());
 }
+
+void CCFlexLayout::fitWidthForTarget(CCFlexLayout &targetLayout){
+    this->setWidth(targetLayout.getWidth() - this->getLeftRightMargin());
+}
+
 void CCFlexLayout::fitHeight(){
     this->setHeight(this->virtualHeight + this->getTopBottomMargin());
 }
@@ -304,13 +345,27 @@ bool CCFlexLayout::isRow(){
     return retVal;
 }
 
+CCFlexLayout& CCFlexLayout::setBackGroundImage(const std::string& fileName ){
+    auto cocosNode = this->getCocosNode();
+    if (cocosNode == nullptr){
+        return *this;
+    }
+    
+    if (Layout* tNode = dynamic_cast<Layout*>(cocosNode)) {
+        tNode->setBackGroundImage(fileName);
+        tNode->setBackGroundImageScale9Enabled(true); // Scale9 활성화
+    }
+    return *this;
+}
+
 CCFlexLayout& CCFlexLayout::setBackGroundColor(const cocos2d::Color3B &color) {
     auto cocosNode = this->getCocosNode();
     if (cocosNode == nullptr){
         return *this;
     }
     
-    if (CCNodeWrapLayout* tNode = dynamic_cast<CCNodeWrapLayout*>(cocosNode)) {
+    if (Layout* tNode = dynamic_cast<Layout*>(cocosNode)) {
+        tNode->setBackGroundColorType(cocos2d::ui::Layout::BackGroundColorType::SOLID);
         tNode->setBackGroundColor(color);
     }
     return *this;

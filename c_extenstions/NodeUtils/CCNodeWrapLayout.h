@@ -19,7 +19,6 @@ public:
         if (layout && layout->init()) {
             layout->autorelease();
             if (node) {
-                //디폴트.
                 layout->setBackGroundColorType(cocos2d::ui::Layout::BackGroundColorType::SOLID);
                 layout->addInnerNode(node);
             }
@@ -34,8 +33,9 @@ public:
         if (innerNode_) {
             innerNode_->setAnchorPoint(cocos2d::Vec2::ANCHOR_MIDDLE);
             innerNode_->setPosition(getContentSize() / 2);
+            this->setContentSize(node->getContentSize());
             this->addChild(innerNode_);
-            syncNodeSize(); // 초기 크기 동기화
+           // syncNodeSize(); // 초기 크기 동기화
         }
     }
 
@@ -43,9 +43,10 @@ public:
         cocos2d::ui::Layout::setContentSize(size);
         if (innerNode_) {
             innerNode_->setPosition(getContentSize() / 2); // 중앙 배치
-            syncNodeSize(); // 크기 동기화
+          //  syncNodeSize(); // 크기 동기화
         }
     }
+
 
 private:
     cocos2d::Node* innerNode_ = nullptr;
