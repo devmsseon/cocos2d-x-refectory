@@ -1,6 +1,6 @@
 <img src="http://www.cocos2d-x.org/attachments/801/cocos2dx_portrait.png" width=200>
 
-
+버전 cocos2d-3.17.2
 cocos2d-x
 =========
 
